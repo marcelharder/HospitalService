@@ -1,4 +1,4 @@
-namespace api.Interfaces;
+namespace HospitalService.interfaces;
 
     public interface IHospitalRepository
     {
@@ -15,7 +15,6 @@ namespace api.Interfaces;
         Task<bool> HospitalImplementsOVI(string id);
         Task<List<Class_Hospital>> GetAllFullHospitals();
         Task<List<Class_Hospital>> GetAllFullHospitalsPerCountry(string id);
-
         InstitutionalDTO GetInstitutionalReport(int hospitalNo, int soort);
         string CreateInstitutionalReport(int hospitalNo);
         string CreateAdditionalReport(int hospitalNo);

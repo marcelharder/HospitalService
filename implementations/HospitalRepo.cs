@@ -1,14 +1,15 @@
-
-
-namespace api.implementations;
+namespace HospitalService.implementations;
 
 public class HospitalRepo : IHospitalRepository
 {
 
-    public DapperContext _dc;
-    public HospitalRepo(DapperContext dc)
+    private readonly DapperContext _dc;
+    private readonly reportMapper _mapper;
+
+    public HospitalRepo(DapperContext dc, reportMapper mapper)
     {
         _dc = dc;
+        _mapper = mapper;
     }
 
    
@@ -88,9 +89,15 @@ public class HospitalRepo : IHospitalRepository
         throw new NotImplementedException();
     }
 
-    public Task<HospitalForReturnDTO> GetSpecificHospital(string hospitalId)
+    public async Task<HospitalForReturnDTO> GetSpecificHospital(string no)
     {
-        throw new NotImplementedException();
+     
+       var query = "SELECT FROM Hospital WHERE HospitalNo = @no";
+       using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QuerySingleOrDefaultAsync<Class_Hospital>(query, new { no });
+             return  _mapper.mapToHospitalForReturn(res);
+        }
     }
 
     public Task<bool> HospitalImplementsOVI(string id)

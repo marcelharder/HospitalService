@@ -1,4 +1,4 @@
-namespace api.DTOs;
+namespace HospitalService.Data.dtos;
 
     public class AdditionalReportDTO
     {

@@ -1,16 +1,21 @@
-namespace api.Controllers;
-
-    [Authorize]
+namespace HospitalService.Controllers;
+    
     public class HospitalController : BaseApiController
     {
         public IHospitalRepository _hos;
+        public reportMapper _map;
         private readonly IOptions<CloudinarySettings> _cloudinaryConfig;
         private readonly Cloudinary _cloudinary;
         private readonly IOptions<ComSettings> _com;
 
-        public HospitalController(IHospitalRepository hos, IOptions<ComSettings> com,IOptions<CloudinarySettings> cloudinaryConfig)
+        public HospitalController(
+            IHospitalRepository hos, 
+            reportMapper map,
+            IOptions<ComSettings> com,
+            IOptions<CloudinarySettings> cloudinaryConfig)
         {
             _hos = hos;
+            _map = map;
             _com = com;
             _cloudinaryConfig = cloudinaryConfig;
 

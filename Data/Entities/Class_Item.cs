@@ -1,4 +1,4 @@
-namespace api.Entities;
+namespace HospitalService.Data.Entities;
 
 public class Class_Item
 {

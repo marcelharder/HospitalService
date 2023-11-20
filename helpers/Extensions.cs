@@ -1,11 +1,5 @@
-using System;
-using System.IO;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+namespace HospitalService.helpers;
 
-namespace api.Helpers
-{
     public static class Extensions
     {
         public static void AddApplicationError(this HttpResponse response, string message)
@@ -34,4 +28,3 @@ namespace api.Helpers
             return help;
         }
     }
-}

@@ -1,6 +1,4 @@
-using MySqlConnector;
-
-namespace surgical_reports.entities;
+namespace HospitalService.Data;
 
     public class DapperContext
     {

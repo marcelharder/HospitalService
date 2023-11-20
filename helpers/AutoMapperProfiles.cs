@@ -1,4 +1,4 @@
-namespace api.Helpers;
+namespace HospitalService.helpers;
 
 public class AutoMapperProfiles : Profile
 {

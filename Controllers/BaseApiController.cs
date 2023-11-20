@@ -1,5 +1,4 @@
-
-namespace api.Controllers;
+namespace HospitalService.Controllers;
 
     [ApiController]
     [Route("api/[controller]")]

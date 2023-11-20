@@ -1,4 +1,4 @@
-namespace api.Extensions;
+namespace HospitalService.Extensions;
 
     public static class ApplicationServicesExtensions
     {
@@ -15,7 +15,8 @@ namespace api.Extensions;
                                mysqlOptions.ServerVersion(new Pomelo.EntityFrameworkCore.MySql.Storage.ServerVersion(new Version(10, 4, 6), ServerType.MariaDb)).EnableRetryOnFailure()));
         */
  
-
+            services.AddScoped<reportMapper>();
+            services.AddScoped<IHospitalRepository,HospitalRepo>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             return services;
         }
