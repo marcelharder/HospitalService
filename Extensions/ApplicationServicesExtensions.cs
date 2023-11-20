@@ -14,7 +14,7 @@ namespace HospitalService.Extensions;
                            mysqlOptions =>
                                mysqlOptions.ServerVersion(new Pomelo.EntityFrameworkCore.MySql.Storage.ServerVersion(new Version(10, 4, 6), ServerType.MariaDb)).EnableRetryOnFailure()));
         */
- 
+            services.AddSingleton<DapperContext>();
             services.AddScoped<reportMapper>();
             services.AddScoped<IHospitalRepository,HospitalRepo>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);

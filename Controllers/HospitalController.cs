@@ -55,10 +55,11 @@ namespace HospitalService.Controllers;
             return Ok(result);
         }
       
-        [HttpGet("getHospitalNameFromId/{id}")]// get specific hospital details
-        public async Task<IActionResult> GetHospitalName(int id)
+        [HttpGet("getHospitalNameFromId/{no}")]// get specific hospital details
+        public async Task<IActionResult> GetHospitalName(string no)
         {
-            var result = await _hos.GetSpecificHospital(id.ToString().makeSureTwoChar());
+            var result = await _hos.GetSpecificHospital(no);
+            
             return Ok(result.HospitalName);
         }
       
@@ -67,7 +68,6 @@ namespace HospitalService.Controllers;
         {
             if(hr.HospitalNo != null){
             var h = await _hos.GetClassHospital(hr.HospitalNo);
-
             Class_Hospital ch = _map.mapToHospital(hr, h);
             return Ok(await _hos.UpdateHospital(ch));
             }
