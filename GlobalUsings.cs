@@ -18,6 +18,9 @@ global using System.Text;
 global using System.Threading.Tasks;
 global using System.ComponentModel.DataAnnotations;
 global using AutoMapper;
+global using System.Data;
+global using api.Interfaces;
+global using surgical_reports.entities;
 
 
 
