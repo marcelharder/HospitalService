@@ -2,7 +2,7 @@ namespace HospitalService.Data.dtos;
 
     public class HospitalForReturnDTO
     {
-        public int Id { get; set; }
+        public int HospitalId { get; set; }
         public string? HospitalName { get; set; }
         public string? SelectedHospitalName { get; set; }
         public string? Description { get; set; }

@@ -20,6 +20,8 @@ global using HospitalService.Data.dtos;
 global using HospitalService.Data.Entities;
 global using HospitalService.Data;
 global using HospitalService.implementations;
+global using Microsoft.EntityFrameworkCore;
+
 
 
 
