@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231121162800_initial")]
-    partial class initial
+    [Migration("20231122120805_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,10 +33,22 @@ namespace HospitalService.Migrations
                     b.Property<string>("City")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Contact")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Contact_image")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Country")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("DBBackend")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Fax")
@@ -78,7 +90,19 @@ namespace HospitalService.Migrations
                     b.Property<string>("OpReportDetails9")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RefHospitals")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("RegExpr")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SMSMobileNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SMSSendTime")
                         .HasColumnType("longtext");
 
                     b.Property<string>("SampleMrn")
@@ -87,11 +111,29 @@ namespace HospitalService.Migrations
                     b.Property<string>("SelectedHospitalName")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("StandardRef")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Telephone")
                         .HasColumnType("longtext");
 
+                    b.Property<bool>("TriggerOneMonth")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("TriggerThreeMonth")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("TriggerTwoMonth")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<bool>("UsesOnlineValveInventory")
                         .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("rp")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("vendors")
+                        .HasColumnType("longtext");
 
                     b.HasKey("HospitalId");
 

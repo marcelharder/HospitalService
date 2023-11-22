@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+
 namespace HospitalService.implementations;
 
 public class HospitalRepo : IHospitalRepository
@@ -12,26 +14,50 @@ public class HospitalRepo : IHospitalRepository
         _mapper = mapper;
     }
 
-
-
+    #region <!--Country Stuff -->
     public Task AddCountry(CountryDto country)
     {
         throw new NotImplementedException();
     }
 
+    public List<Class_Item> GetAllCities()
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Class_Item> GetAllCitiesPerCountry(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Class_Country_Items> GetAllCountries()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> UpdateCountry(Class_Hospital p)
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
+
+
+
     public async Task<Class_Hospital?> AddHospital(Class_Hospital cp)
     {
         var query = "INSERT INTO Hospitals (SelectedHospitalName,HospitalName,HospitalNo,Description,Address,Telephone," +
       "Fax,City,Country,SampleMrn,RegExpr,UsesOnlineValveInventory,ImageUrl,OpReportDetails1,OpReportDetails2,OpReportDetails3," +
+      "Vendors,Rp,SMSMobileNumber,SMSSendTime,TriggerOneMonth,TriggerTwoMonth,TriggerThreeMonth,DBBackend, " +
       "OpReportDetails4,OpReportDetails5,OpReportDetails6,OpReportDetails7,OpReportDetails8,OpReportDetails9)" +
       "VALUES (@SelectedHospitalName,@HospitalName,@HospitalNo,@Description,@Address,@Telephone,@Fax,@City,@Country,@SampleMrn," +
       "@RegExpr,@UsesOnlineValveInventory,@ImageUrl,@OpReportDetails1,@OpReportDetails2,@OpReportDetails3," +
+      "@Vendors,@Rp,@SMSMobileNumber,@SMSSendTime,@TriggerOneMonth,@TriggerTwoMonth,@TriggerThreeMonth,@DBBackend, " +
       "@OpReportDetails4,@OpReportDetails5,@OpReportDetails6," +
       "@OpReportDetails7,@OpReportDetails8,@OpReportDetails9);" + " SELECT LAST_INSERT_ID() FROM Hospitals";
 
         var parameters = new DynamicParameters();
 
-        
+
         parameters.Add("SelectedHospitalName", cp.SelectedHospitalName, DbType.String);
         parameters.Add("HospitalName", cp.HospitalName, DbType.String);
         parameters.Add("HospitalNo", cp.HospitalNo, DbType.String);
@@ -45,6 +71,15 @@ public class HospitalRepo : IHospitalRepository
         parameters.Add("RegExpr", cp.RegExpr, DbType.String);
         parameters.Add("UsesOnlineValveInventory", cp.UsesOnlineValveInventory, DbType.Boolean);
         parameters.Add("ImageUrl", cp.ImageUrl, DbType.String);
+        parameters.Add("Vendors", cp.Vendors, DbType.String);
+        parameters.Add("Rp", cp.Rp, DbType.String);
+        parameters.Add("SMSMobileNumber", cp.SMSMobileNumber, DbType.String);
+        parameters.Add("SMSSendTime", cp.SMSSendTime, DbType.String);
+        parameters.Add("TriggerOneMonth", cp.TriggerOneMonth, DbType.Boolean);
+        parameters.Add("TriggerTwoMonth", cp.TriggerTwoMonth, DbType.Boolean);
+        parameters.Add("TriggerThreeMonth", cp.TriggerThreeMonth, DbType.Boolean);
+        parameters.Add("DBBackend", cp.DBBackend, DbType.String);
+
         parameters.Add("OpReportDetails1", cp.OpReportDetails1, DbType.String);
         parameters.Add("OpReportDetails2", cp.OpReportDetails2, DbType.String);
         parameters.Add("OpReportDetails3", cp.OpReportDetails3, DbType.String);
@@ -76,6 +111,14 @@ public class HospitalRepo : IHospitalRepository
                     RegExpr = cp.RegExpr,
                     UsesOnlineValveInventory = cp.UsesOnlineValveInventory,
                     ImageUrl = cp.ImageUrl,
+                    Vendors = cp.Vendors,
+                    Rp = cp.Rp,
+                    SMSMobileNumber = cp.SMSMobileNumber,
+                    SMSSendTime = cp.SMSSendTime,
+                    TriggerOneMonth = cp.TriggerOneMonth,
+                    TriggerTwoMonth = cp.TriggerTwoMonth,
+                    TriggerThreeMonth = cp.TriggerThreeMonth,
+                    DBBackend = cp.DBBackend,
                     OpReportDetails1 = cp.OpReportDetails1,
                     OpReportDetails2 = cp.OpReportDetails2,
                     OpReportDetails3 = cp.OpReportDetails3,
@@ -85,6 +128,12 @@ public class HospitalRepo : IHospitalRepository
                     OpReportDetails7 = cp.OpReportDetails7,
                     OpReportDetails8 = cp.OpReportDetails8,
                     OpReportDetails9 = cp.OpReportDetails9,
+                    RefHospitals = cp.RefHospitals,
+                    StandardRef = cp.StandardRef,
+                    Email = cp.Email,
+                    Contact = cp.Contact,
+                    Contact_image = cp.Contact_image,
+                    PostalCode = cp.PostalCode
                 };
                 return createdHospital;
             }
@@ -94,7 +143,6 @@ public class HospitalRepo : IHospitalRepository
             }
         }
     }
-
     public async Task<bool> CheckHospitalExists(string hospitalNo)
     {
         var help = false;
@@ -109,67 +157,83 @@ public class HospitalRepo : IHospitalRepository
         });
         return help;
     }
-
-    public string CreateAdditionalReport(int hospitalNo)
+    public async Task<List<Class_Hospital>> GetAllFullHospitals()
     {
-        throw new NotImplementedException();
+        var query = "SELECT * FROM Hospitals";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query);
+            if (res != null)
+            {
+                return res.ToList();
+            }
+            return null;
+        }
     }
-
-    public string CreateInstitutionalReport(int hospitalNo)
+    public async Task<List<Class_Hospital>> GetAllFullHospitalsPerCountry(string id) // id is bv NL of US
     {
-        throw new NotImplementedException();
+        var query = "SELECT * FROM Hospitals WHERE Country = @id";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query, new { id });
+            if (res != null)
+            {
+                return res.ToList();
+            }
+            return null;
+        }
     }
-
-    public AdditionalReportDTO GetAdditionalReportItems(int hospitalNo, int which)
+    public async Task<List<HospitalForReturnDTO>> GetAllHospitals()
     {
-        throw new NotImplementedException();
+        var help = new HospitalForReturnDTO();
+        var help_list = new List<HospitalForReturnDTO>();
+        var query = "SELECT * FROM Hospitals";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query);
+            if (res != null)
+            {
+                foreach (Class_Hospital ch in res)
+                {
+                    help_list.Add(_mapper.mapToHospitalForReturn(ch));
+                }
+                return help_list;
+            }
+            return null;
+        }
     }
-
-    public List<Class_Item> GetAllCities()
+    public async Task<List<HospitalForReturnDTO>> GetAllHospitalsThisSurgeonWorkedIn(string[] id)
     {
-        throw new NotImplementedException();
-    }
+        var list = new List<HospitalForReturnDTO>();
+        var help = new HospitalForReturnDTO();
 
-    public List<Class_Item> GetAllCitiesPerCountry(string id)
+        if (id.Length >= 0)
+        {
+            foreach (string t in id)
+            {
+                help = await this.GetSpecificHospital(t.makeSureTwoChar());
+                if (help != null)
+                {
+                    list.Add(help);
+                }
+            };
+        }
+        return list;
+    }
+    public async Task<Class_Hospital?> GetClassHospital(string hospitalNo)
     {
-        throw new NotImplementedException();
+        var hos = hospitalNo.makeSureTwoChar();
+        var query = "SELECT * FROM Hospitals WHERE HospitalNo = @hos";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<Class_Hospital>(query, new { hos });
+            if (res != null)
+            {
+                return res;
+            }
+            return null;
+        }
     }
-
-    public List<Class_Country_Items> GetAllCountries()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<Class_Hospital>> GetAllFullHospitals()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<Class_Hospital>> GetAllFullHospitalsPerCountry(string id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<HospitalForReturnDTO> GetAllHospitals()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<HospitalForReturnDTO>> GetAllHospitalsThisSurgeonWorkedIn(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Class_Hospital> GetClassHospital(string id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public InstitutionalDTO GetInstitutionalReport(int hospitalNo, int soort)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<HospitalForReturnDTO?> GetSpecificHospital(string no)
     {
         var hospitalNo = no.makeSureTwoChar();
@@ -184,38 +248,53 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-
-    public Task<bool> HospitalImplementsOVI(string id)
+    public async Task<bool> HospitalImplementsOVI(string id)
     {
-        throw new NotImplementedException();
+        var selectedHospital = await GetSpecificHospital(id);
+        if (selectedHospital != null)
+        {
+            return selectedHospital.UsesOnlineValveInventory;
+        }
+        else
+        {
+            return false;
+        }
     }
-
-    public int UpdateAdditionalReportItem(AdditionalReportDTO l, int id, int which)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<int> UpdateHospital(Class_Hospital pv)
     {
         var query = "UPDATE Hospitals SET HospitalName = @hn, selectedHospitalName = @shn, " +
        "HospitalNo = @HospitalNo, Description = @Description, Address = @Address, Telephone = @Telephone, Fax = @Fax, " +
        "City = @City, Country = @Country, SampleMrn = @SampleMrn, Regexpr = @Regexpr, " +
+       "RefHospitals = @RefHospitals,StandardRef = @StandardRef,Email = @Email, " +
+       "Vendors = @Vendors,Rp = @Rp,SMSMobileNumber = @SMSMobileNumber, " +
+       "SMSSendTime = @SMSSendTime ,TriggerOneMonth = @TriggerOneMonth,TriggerTwoMonth = @TriggerTwoMonth, " +
+       "TriggerThreeMonth = @TriggerThreeMonth,DBBackend = @DBBackend, " +
+       "Contact = @Contact,Contact_image = @Contact_image,PostalCode = @PostalCode, " +
        "usesOnlineValveInventory = @usesOnlineValveInventory, ImageUrl = @ImageUrl,OpReportDetails1 = @OpreportDetails1, " +
        "OpreportDetails2 = @OpreportDetails2, OpreportDetails3 = @OpreportDetails3, OpreportDetails4 = @OpreportDetails4, " +
        "OpreportDetails5 = @OpreportDetails5, OpreportDetails6 = @OpreportDetails6, OpreportDetails7 = @OpreportDetails7, " +
-       "OpreportDetails8 = @OpreportDetails8, OpreportDetails9 = @OpreportDetails9 WHERE hospitalNo = @hospitalNo";
+       "OpreportDetails8 = @OpreportDetails8, OpreportDetails9 = @OpreportDetails9 WHERE HospitalNo = @hospitalNo";
 
         var parameters = new DynamicParameters();
 
         parameters.Add("hn", pv.HospitalName);
         parameters.Add("shn", pv.SelectedHospitalName);
-        parameters.Add("HospitalNo", pv.HospitalNo);
+        parameters.Add("hospitalNo", pv.HospitalNo);
         parameters.Add("Description", pv.Description);
         parameters.Add("Address", pv.Address);
         parameters.Add("Telephone", pv.Telephone);
         parameters.Add("Fax", pv.Fax);
         parameters.Add("City", pv.City);
         parameters.Add("Country", pv.Country);
+
+        parameters.Add("RefHospitals", pv.RefHospitals);
+        parameters.Add("StandardRef", pv.StandardRef);
+        parameters.Add("Telephone", pv.Telephone);
+        parameters.Add("Email", pv.Email);
+        parameters.Add("Contact", pv.Contact);
+        parameters.Add("Contact_image", pv.Contact_image);
+        parameters.Add("PostalCode", pv.PostalCode);
+
         parameters.Add("SampleMrn", pv.SampleMrn);
         parameters.Add("Regexpr", pv.RegExpr);
         parameters.Add("usesOnlineValveInventory", pv.UsesOnlineValveInventory);
@@ -229,15 +308,60 @@ public class HospitalRepo : IHospitalRepository
         parameters.Add("OpreportDetails7", pv.OpReportDetails7);
         parameters.Add("OpreportDetails8", pv.OpReportDetails8);
         parameters.Add("OpreportDetails9", pv.OpReportDetails9);
-        parameters.Add("hospitalNo", pv.HospitalNo);
+
+        parameters.Add("Vendors", pv.Vendors, DbType.String);
+        parameters.Add("Rp", pv.Rp, DbType.String);
+        parameters.Add("SMSMobileNumber", pv.SMSMobileNumber, DbType.String);
+        parameters.Add("SMSSendTime", pv.SMSSendTime, DbType.String);
+        parameters.Add("TriggerOneMonth", pv.TriggerOneMonth, DbType.Boolean);
+        parameters.Add("TriggerTwoMonth", pv.TriggerTwoMonth, DbType.Boolean);
+        parameters.Add("TriggerThreeMonth", pv.TriggerThreeMonth, DbType.Boolean);
+        parameters.Add("DBBackend", pv.DBBackend, DbType.String);
+
 
         using (var connection = _dc.CreateConnection()) { await connection.ExecuteAsync(query, parameters); }
 
         return 1;
     }
 
+
+
+    #region <!-- additional reports -->
+
+    public string CreateAdditionalReport(int hospitalNo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int UpdateAdditionalReportItem(AdditionalReportDTO l, int id, int which)
+    {
+        throw new NotImplementedException();
+    }
+    public AdditionalReportDTO GetAdditionalReportItems(int hospitalNo, int which)
+    {
+        throw new NotImplementedException();
+    }
+
+    #endregion
+
+    #region <!-- institutional reports -->
+
+    public string CreateInstitutionalReport(int hospitalNo)
+    {
+        throw new NotImplementedException();
+    }
+
     public string UpdateInstitutionalReport(InstitutionalDTO rep, int hospitalNo, int soort)
     {
         throw new NotImplementedException();
     }
+
+    public InstitutionalDTO GetInstitutionalReport(int hospitalNo, int soort)
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+    #endregion
 }

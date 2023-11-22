@@ -2,12 +2,13 @@ namespace HospitalService.interfaces;
 
     public interface IHospitalRepository
     {
-        List<HospitalForReturnDTO> GetAllHospitals();       
+        Task<List<HospitalForReturnDTO>> GetAllHospitals();       
         Task<HospitalForReturnDTO?> GetSpecificHospital(string hospitalId);
-        Task<List<HospitalForReturnDTO>> GetAllHospitalsThisSurgeonWorkedIn(int id) ;
+        Task<List<HospitalForReturnDTO>> GetAllHospitalsThisSurgeonWorkedIn(string[] id) ;
         List<Class_Country_Items> GetAllCountries();
         List<Class_Item> GetAllCities();
         Task<int> UpdateHospital(Class_Hospital p);
+        Task<int> UpdateCountry(Class_Hospital p);
         Task<Class_Hospital?> AddHospital(Class_Hospital p);
         Task<bool> CheckHospitalExists(string hospitalNo);
         Task<Class_Hospital> GetClassHospital(string id);
