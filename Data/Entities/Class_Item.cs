@@ -2,6 +2,6 @@ namespace HospitalService.Data.Entities;
 
 public class Class_Item
 {
-    public required int Value { get; set; }
-    public required string Description { get; set; }
+    public int Value { get; set; }
+    public string? Description { get; set; }
 }

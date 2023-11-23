@@ -97,16 +97,9 @@ public class HospitalController : BaseApiController
     public async Task<IActionResult> deleteHospitalAsync(string id)
     {
         var h = await _hos.GetClassHospital(id);
-
-
-        if (h != null)
-        {
-            //delete hospital
-
-            //return Ok(await _hos.DeleteAsync(h)); 
-        }
-
-
+        if (h != null){
+            return Ok(await _hos.DeleteHospital(h));
+            }
         return BadRequest("Hospital not found");
 
     }

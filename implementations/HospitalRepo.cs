@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace HospitalService.implementations;
@@ -15,30 +16,136 @@ public class HospitalRepo : IHospitalRepository
     }
 
     #region <!--Country Stuff -->
-    public Task AddCountry(CountryDto country)
+    public async Task<ClassCountry?> AddCountry(CountryDto cp)
     {
-        throw new NotImplementedException();
+        var query = "INSERT INTO Countries (TelCode,IsoCode,Description, Cities)" +
+                    "VALUES (@TelCode,@IsoCode,@Description,@Cities);" + " SELECT LAST_INSERT_ID() FROM Countries";
+
+        var parameters = new DynamicParameters();
+
+        parameters.Add("TelCode", cp.TelCode, DbType.String);
+        parameters.Add("IsoCode", cp.IsoCode, DbType.String);
+        parameters.Add("Description", cp.Description, DbType.String);
+        parameters.Add("Cities", cp.Cities, DbType.String);
+
+        using (var connection = _dc.CreateConnection())
+        {
+            var id = await connection.QueryFirstOrDefaultAsync<int>(query, parameters);
+            if (id != 0)
+            {
+                var createdCountry = new ClassCountry
+                {
+                    Id = id,
+                    TelCode = cp.TelCode,
+                    IsoCode = cp.IsoCode,
+                    Description = cp.Description,
+                    Cities = cp.Cities,
+
+                };
+                return createdCountry;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+    public async Task<List<Class_Item>> GetAllCities()
+    {
+        var list = new List<Class_Item>();
+        var counter = 0;
+        var allCountries = await GetAllCountries();
+        if (allCountries != null)
+        {
+            foreach (ClassCountry ch in allCountries)
+            {
+                if (ch.Cities != null)
+                {
+                    var arrayCities = ch.Cities.Split(',');
+                    foreach (string el in arrayCities)
+                    {
+                        var ci = new Class_Item();
+                        ci.Value = counter++;
+                        ci.Description = el;
+                        list.Add(ci);
+                    }
+                }
+            }
+
+        }
+        return list;
+    }
+    public async Task<List<Class_Item>?> GetAllCitiesPerCountry(string id)
+    {
+        var list = new List<Class_Item>();
+        var counter = 0;
+        var query = "SELECT * FROM Countries WHERE IsoCode = @id";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { id });
+            if (res != null)
+            {
+                if (res.Cities != null)
+                {
+                    var arrayCities = res.Cities.Split(',').ToList();
+                    foreach (string el in arrayCities)
+                    {
+                        var ci = new Class_Item();
+                        ci.Value = counter++;
+                        ci.Description = el;
+                        list.Add(ci);
+                    }
+                }
+            }
+        }
+        return list;
+    }
+    public async Task<List<ClassCountry>?> GetAllCountries()
+    {
+        var list = new List<ClassCountry>();
+        var query = "SELECT * FROM Countries";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<ClassCountry>(query);
+            if (res != null)
+            {
+                foreach (ClassCountry cc in res)
+                { list.Add(cc); }
+            }
+        }
+        return list;
+    }
+    public async Task<ClassCountry?> GetSpecificCountry(string IsoCode)
+    {
+        var result = new ClassCountry();
+        var query = "SELECT * FROM Countries WHERE IsoCode = @IsoCode";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { IsoCode });
+            if (res != null)
+            {
+                result = res;
+            }
+
+        }
+        return result;
+    }
+    public async Task<int> UpdateCountry(ClassCountry pv)
+    {
+        var query = "UPDATE Countries SET TelCode = @TelCode, IsoCode = @IsoCode,Description = @Description, Cities = @Cities WHERE Id = @Id";
+
+        var parameters = new DynamicParameters();
+
+        parameters.Add("Id", pv.Id);
+        parameters.Add("TelCode", pv.TelCode);
+        parameters.Add("IsoCode", pv.IsoCode);
+        parameters.Add("Description", pv.Description);
+        parameters.Add("Cities", pv.Cities);
+        using (var connection = _dc.CreateConnection()) { await connection.ExecuteAsync(query, parameters); }
+
+        return 1;
     }
 
-    public List<Class_Item> GetAllCities()
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<Class_Item> GetAllCitiesPerCountry(string id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<Class_Country_Items> GetAllCountries()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<int> UpdateCountry(Class_Hospital p)
-    {
-        throw new NotImplementedException();
-    }
     #endregion
 
 
@@ -323,7 +430,13 @@ public class HospitalRepo : IHospitalRepository
 
         return 1;
     }
-
+    public async Task<int> DeleteHospital(Class_Hospital p)
+    {
+        var hospitalNo = p.HospitalNo;
+        var query = "DELETE * FROM Hospitals WHERE HospitalNo = @hospitalNo";
+        using (var connection = _dc.CreateConnection()) { await connection.ExecuteAsync(query, new { hospitalNo }); }
+        return 1;
+    }
 
 
     #region <!-- additional reports -->
@@ -360,6 +473,12 @@ public class HospitalRepo : IHospitalRepository
     {
         throw new NotImplementedException();
     }
+
+
+
+
+
+
 
 
 

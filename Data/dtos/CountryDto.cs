@@ -2,7 +2,9 @@ namespace HospitalService.Data.dtos;
 
 public class CountryDto
 {
-    public string? Value { get; set; }
-    public string? Tel_Code { get; set; }
+    public string? IsoCode { get; set; }
+    public int TelCode { get; set; }
     public string? Description { get; set; }
+
+    public string? Cities { get; set; }
 }
