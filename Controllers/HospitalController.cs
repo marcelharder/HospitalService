@@ -39,32 +39,20 @@ public class HospitalController : BaseApiController
     [HttpGet("allFullHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalsperCountry(string id)
     {
-        // id is now bv 31 en moet NL worden
-        // var iso_land = _map.getCountryFromCode(id);
-
         var ret = new List<HospitalForReturnDTO>();
         var result = await _hos.GetAllFullHospitalsPerCountry(id);
         foreach (Class_Hospital ch in result) { ret.Add(_map.mapToHospitalForReturn(ch)); }
         return Ok(ret);
     }
 
-    [HttpGet("{id}", Name = "GetHospital")]// get specific hospital details
-    public async Task<IActionResult> GetHospital(int id)
-    {
-        var result = await _hos.GetSpecificHospital(id.ToString().makeSureTwoChar());
-        return Ok(result);
-    }
+    [HttpGet("{id}", Name = "GetHospital")]// get specific hospital details 
+    public async Task<IActionResult> GetHospital(int id){return Ok(await _hos.GetSpecificHospital(id.ToString()));}
 
     [HttpGet("getHospitalNameFromId/{no}")]// get specific hospital details
-    public async Task<IActionResult> GetHospitalName(string no)
-    {
-        var result = await _hos.GetSpecificHospital(no);
-
-        return Ok(result.HospitalName);
-    }
+    public async Task<IActionResult> GetHospitalName(string no){return Ok(await _hos.GetSpecificHospital(no));}
 
     [HttpPut]
-    public async Task<IActionResult> PutHospitalAsync([FromBody] HospitalForReturnDTO hr)
+    public async Task<IActionResult> PutHospitalAsync([FromBody] HospitalForReturnDTO hr) // for requests coming from soa
     {
         if (hr.HospitalNo != null)
         {
@@ -94,15 +82,7 @@ public class HospitalController : BaseApiController
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> deleteHospitalAsync(string id)
-    {
-        var h = await _hos.GetClassHospital(id);
-        if (h != null){
-            return Ok(await _hos.DeleteHospital(h));
-            }
-        return BadRequest("Hospital not found");
-
-    }
+    public async Task<IActionResult> deleteHospitalAsync(string id){return Ok(await _hos.DeleteHospital(id));}
 
     [HttpPost("addHospitalPhoto/{id}")]
     public async Task<IActionResult> AddPhotoForHospital(int id, [FromForm] PhotoForCreationDto photoDto)
@@ -135,16 +115,6 @@ public class HospitalController : BaseApiController
         return BadRequest("Could not add the photo ...");
     }
 
-    [HttpPost("addCountryNow")]
-    public async Task<IActionResult> AddCountryNow(CountryDto model)
-    {
-        await Task.Run(() =>
-        {
-            _hos.AddCountry(model);
-        });
-        return Ok();
-    }
-
     [HttpGet("hospitalByUser/{id}")]
     public async Task<IActionResult> getCurrentHospitalForUser(int id)
     {
@@ -153,87 +123,9 @@ public class HospitalController : BaseApiController
     }
 
     [HttpGet("IsThisHospitalImplementingOVI/{id}")]
-    public async Task<IActionResult> getOVI(string id)
-    {
-        return Ok(await _hos.HospitalImplementsOVI(id));
-    }
+    public async Task<IActionResult> getOVI(string id){return Ok(await _hos.HospitalImplementsOVI(id));}
 
-    #region <!-- InstitutionalReports stuff -->
-
-    [HttpGet("InstitutionalReport/{hospitalId}/{soort}")]
-    public async Task<IActionResult> getIRepAsync(string hospitalId, int soort)
-    {
-        var help = "";
-        var comaddress = _com.Value.ReportURL;
-        var st = "InstitutionalReport/" + hospitalId + "/" + soort;
-        comaddress = comaddress + st;
-        using (var httpClient = new HttpClient())
-        {
-            using (var response = await httpClient.GetAsync(comaddress))
-            {
-                help = await response.Content.ReadAsStringAsync();
-            }
-        }
-        return Ok(help);
-    }
-
-    [HttpPut("InstitutionalReport/{hospitalId}/{soort}")]
-    public async Task<IActionResult> updateIRepAsync([FromBody] InstitutionalDTO cp, string hospitalId, int soort)
-    {
-        var help = "";
-        var comaddress = _com.Value.ReportURL;
-        var st = "InstitutionalReport/" + hospitalId + "/" + soort;
-        comaddress = comaddress + st;
-        var json = JsonConvert.SerializeObject(cp, Formatting.None);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        using (var httpClient = new HttpClient())
-        {
-            using (var response = await httpClient.PutAsync(comaddress, content))
-            {
-                help = await response.Content.ReadAsStringAsync();
-            }
-        }
-        return Ok(help);
-    }
-
-
-    [HttpGet("AdditionalReportItems/{hospitalId}/{which}")]
-    public async Task<IActionResult> getARIAsync(string hospitalId, int which)
-    {
-        var help = "";
-        var comaddress = _com.Value.ReportURL;
-        var st = "InstitutionalReport/AdditionalReportitems/" + hospitalId + "/" + which;
-        comaddress = comaddress + st;
-        using (var httpClient = new HttpClient())
-        {
-            using (var response = await httpClient.GetAsync(comaddress))
-            {
-                help = await response.Content.ReadAsStringAsync();
-            }
-        }
-        return Ok(help);
-    }
-
-    [HttpPut("UpdateAdditionalReportItems/{hospitalId}/{which}")]
-    public async Task<IActionResult> updateIRepAsync([FromBody] AdditionalReportDTO cp, string hospitalId, int which)
-    {
-        var help = "";
-        var comaddress = _com.Value.ReportURL;
-        var st = "InstitutionalReport/AdditionalReportitems/" + hospitalId + "/" + which;
-        comaddress = comaddress + st;
-        var json = JsonConvert.SerializeObject(cp, Formatting.None);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        using (var httpClient = new HttpClient())
-        {
-            using (var response = await httpClient.PutAsync(comaddress, content))
-            {
-                help = await response.Content.ReadAsStringAsync();
-            }
-        }
-        return Ok(help);
-    }
-
-    #endregion
+  
 
 }
 

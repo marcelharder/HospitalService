@@ -5,7 +5,6 @@ namespace HospitalService.implementations;
 
 public class HospitalRepo : IHospitalRepository
 {
-
     private readonly DapperContext _dc;
     private readonly reportMapper _mapper;
 
@@ -327,7 +326,7 @@ public class HospitalRepo : IHospitalRepository
         }
         return list;
     }
-    public async Task<Class_Hospital?> GetClassHospital(string hospitalNo)
+    public async Task<Class_Hospital> GetClassHospital(string hospitalNo)
     {
         var hos = hospitalNo.makeSureTwoChar();
         var query = "SELECT * FROM Hospitals WHERE HospitalNo = @hos";
@@ -430,34 +429,18 @@ public class HospitalRepo : IHospitalRepository
 
         return 1;
     }
-    public async Task<int> DeleteHospital(Class_Hospital p)
+    public async Task<int> DeleteHospital(string hospitalNo)
     {
-        var hospitalNo = p.HospitalNo;
-        var query = "DELETE * FROM Hospitals WHERE HospitalNo = @hospitalNo";
-        using (var connection = _dc.CreateConnection()) { await connection.ExecuteAsync(query, new { hospitalNo }); }
+        var query = "DELETE FROM Hospitals WHERE HospitalNo = @hospitalNo";
+        using (var connection = _dc.CreateConnection())
+        {
+            await connection.ExecuteAsync(query, new { hospitalNo });
+        }
         return 1;
     }
 
 
-    #region <!-- additional reports -->
-
-    public string CreateAdditionalReport(int hospitalNo)
-    {
-        throw new NotImplementedException();
-    }
-
-    public int UpdateAdditionalReportItem(AdditionalReportDTO l, int id, int which)
-    {
-        throw new NotImplementedException();
-    }
-    public AdditionalReportDTO GetAdditionalReportItems(int hospitalNo, int which)
-    {
-        throw new NotImplementedException();
-    }
-
-    #endregion
-
-    #region <!-- institutional reports -->
+  
 
     public string CreateInstitutionalReport(int hospitalNo)
     {
