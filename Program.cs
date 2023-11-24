@@ -24,6 +24,8 @@ var app = builder.Build();
             // var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
             await context.Database.EnsureCreatedAsync();
             // await Seed.SeedUsers(userManager, roleManager);
+            await Seed.SeedHospitals(context);
+            await Seed.SeedCountries(context);
             
         }
         catch (Exception ex)
