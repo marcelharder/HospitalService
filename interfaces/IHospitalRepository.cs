@@ -14,6 +14,7 @@ namespace HospitalService.interfaces;
         Task<List<Class_Hospital>?> GetAllFullHospitalsPerCountry(string id);
         Task<List<Class_Item>?> getHospitalsPerCountry(string id);
         Task<List<Class_Item>> getHospitalsWhereUserWorked(string hosp);
+        Task<string?> getHospitalNameFromId(string hosp);
 
 
         Task<ClassCountry?> AddCountry(CountryDto country);

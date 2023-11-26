@@ -329,7 +329,13 @@ public class HospitalRepo : IHospitalRepository
         }
         return list;
     }
-
+    public async Task<string?> getHospitalNameFromId(string hosp)
+    {
+        var help = await GetSpecificHospital(hosp);
+        if(help != null){return help.HospitalName;}
+        return null;
+        
+    }
 
 
     public async Task<List<HospitalForReturnDTO>?> GetAllHospitals()
@@ -351,7 +357,7 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-   
+  
     public async Task<Class_Hospital?> GetClassHospital(string hospitalNo)
     {
         var hos = hospitalNo.makeSureTwoChar();
@@ -483,13 +489,5 @@ public class HospitalRepo : IHospitalRepository
         throw new NotImplementedException();
     }
 
-
-
-
-
-
-
-
-
-
+    
 }
