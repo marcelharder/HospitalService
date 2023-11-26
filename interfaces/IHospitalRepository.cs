@@ -13,6 +13,8 @@ namespace HospitalService.interfaces;
         Task<bool> HospitalImplementsOVI(string id);
         Task<List<Class_Hospital>> GetAllFullHospitals();
         Task<List<Class_Hospital>> GetAllFullHospitalsPerCountry(string id);
+        Task<List<Class_Item>?> getHospitalsPerCountry(string id);
+        Task<List<Class_Item>> getHospitalsWhereUserWorked(string hosp);
 
 
         Task<ClassCountry?> AddCountry(CountryDto country);
