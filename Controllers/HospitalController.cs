@@ -53,8 +53,10 @@ public class HospitalController : BaseApiController
     }
     [HttpGet("getHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalInCountry(string id) { return Ok(await _hos.getHospitalsPerCountry(id)); }
+   
     [HttpGet("getHospitalsWhereUserWorked/{csv}")]
     public async Task<IActionResult> getAllHospitalsThisSurgeonWorkedIn(string csv) { return Ok(await _hos.getHospitalsWhereUserWorked(csv)); }
+    
     [HttpGet("getHospitalName/{hos}")]
     public async Task<IActionResult> getHospitalName(string hos)
     {
@@ -65,10 +67,12 @@ public class HospitalController : BaseApiController
         }
         return Ok(result);
     }
+   
     [HttpGet("{id}", Name = "GetHospital")]// get specific hospital details 
     public async Task<IActionResult> GetHospital(int id) { return Ok(await _hos.GetSpecificHospital(id.ToString())); }
-    [HttpGet("getHospitalNameFromId/{no}")]// get specific hospital details
-    public async Task<IActionResult> GetHospitalName(string no) { return Ok(await _hos.GetSpecificHospital(no)); }
+    
+    [HttpGet("getHospital/{no}")]// get specific hospital details
+    public async Task<IActionResult> GetHospitalDetails(string no) { return Ok(await _hos.GetSpecificHospital(no)); }
     [HttpPut]
     public async Task<IActionResult> PutHospitalAsync([FromBody] HospitalForReturnDTO hr) // for requests coming from soa
     {
@@ -81,6 +85,7 @@ public class HospitalController : BaseApiController
         }
         return BadRequest("");
     }
+ 
     [HttpPost("{country}/{no}")]
     public async Task<IActionResult> PostHospitalAsync(string country, int no)
     {
@@ -98,8 +103,10 @@ public class HospitalController : BaseApiController
         }
 
     }
+  
     [HttpDelete("{id}")]
     public async Task<IActionResult> deleteHospitalAsync(string id) { return Ok(await _hos.DeleteHospital(id)); }
+   
     [HttpPost("addHospitalPhoto/{id}")]
     public async Task<IActionResult> AddPhotoForHospital(int id, [FromForm] PhotoForCreationDto photoDto)
     {
@@ -131,6 +138,7 @@ public class HospitalController : BaseApiController
         }
         return BadRequest("Could not add the photo ...");
     }
+   
     [HttpGet("hospitalByUser/{id}")]
     public async Task<IActionResult> getCurrentHospitalForUser(int id)
     {
@@ -141,6 +149,7 @@ public class HospitalController : BaseApiController
         }
         return Ok(result.HospitalName);
     }
+  
     [HttpGet("IsThisHospitalImplementingOVI/{id}")]
     public async Task<IActionResult> getOVI(string id) { return Ok(await _hos.HospitalImplementsOVI(id)); }
 
