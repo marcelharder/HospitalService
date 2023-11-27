@@ -263,7 +263,7 @@ public class HospitalRepo : IHospitalRepository
         });
         return help;
     }
-    public async Task<List<Class_Hospital>> GetAllFullHospitals()
+    public async Task<List<Class_Hospital>?> GetAllFullHospitals()
     {
         var query = "SELECT * FROM Hospitals";
         using (var connection = _dc.CreateConnection())
@@ -276,7 +276,7 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-    public async Task<List<Class_Hospital>> GetAllFullHospitalsPerCountry(string id) // id is bv NL of US
+    public async Task<List<Class_Hospital>?> GetAllFullHospitalsPerCountry(string id) // id is bv NL of US
     {
         var query = "SELECT * FROM Hospitals WHERE Country = @id";
         using (var connection = _dc.CreateConnection())
@@ -289,7 +289,56 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-    public async Task<List<HospitalForReturnDTO>> GetAllHospitals()
+    public async Task<List<Class_Item>?> getHospitalsPerCountry(string id) // id is bv NL of US
+    {
+        var list = new List<Class_Item>();
+        var query = "SELECT * FROM Hospitals WHERE Country = @id";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query, new { id });
+            if (res != null)
+            {
+                foreach (Class_Hospital ch in res)
+                {
+
+                    var ci = new Class_Item();
+                    ci.Value = Convert.ToInt32(ch.HospitalNo);
+                    ci.Description = ch.HospitalName;
+                    list.Add(ci);
+
+                }
+                return list;
+            }
+        }
+        return null;
+    }
+    public async Task<List<Class_Item>> getHospitalsWhereUserWorked(string hosp) // bv 4,48,5
+    {
+        var list = new List<Class_Item>();
+        //make array from string
+        var ar = hosp.Split(',').ToList();
+        foreach(string test in ar){
+           HospitalForReturnDTO? help = await GetSpecificHospital(test);
+            if (help != null)
+            {
+                var ci = new Class_Item();
+                ci.Value = Convert.ToInt32(help.HospitalNo);
+                ci.Description = help.HospitalName;
+                list.Add(ci);
+            }
+        }
+        return list;
+    }
+    public async Task<string?> getHospitalNameFromId(string hosp)
+    {
+        var help = await GetSpecificHospital(hosp);
+        if(help != null){return help.HospitalName;}
+        return null;
+        
+    }
+
+
+    public async Task<List<HospitalForReturnDTO>?> GetAllHospitals()
     {
         var help = new HospitalForReturnDTO();
         var help_list = new List<HospitalForReturnDTO>();
@@ -308,25 +357,8 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-    public async Task<List<HospitalForReturnDTO>> GetAllHospitalsThisSurgeonWorkedIn(string[] id)
-    {
-        var list = new List<HospitalForReturnDTO>();
-        var help = new HospitalForReturnDTO();
-
-        if (id.Length >= 0)
-        {
-            foreach (string t in id)
-            {
-                help = await this.GetSpecificHospital(t.makeSureTwoChar());
-                if (help != null)
-                {
-                    list.Add(help);
-                }
-            };
-        }
-        return list;
-    }
-    public async Task<Class_Hospital> GetClassHospital(string hospitalNo)
+  
+    public async Task<Class_Hospital?> GetClassHospital(string hospitalNo)
     {
         var hos = hospitalNo.makeSureTwoChar();
         var query = "SELECT * FROM Hospitals WHERE HospitalNo = @hos";
@@ -440,7 +472,7 @@ public class HospitalRepo : IHospitalRepository
     }
 
 
-  
+
 
     public string CreateInstitutionalReport(int hospitalNo)
     {
@@ -456,14 +488,6 @@ public class HospitalRepo : IHospitalRepository
     {
         throw new NotImplementedException();
     }
-
-
-
-
-
-
-
-
 
     
 }
