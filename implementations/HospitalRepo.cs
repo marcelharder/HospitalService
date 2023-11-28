@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using Microsoft.AspNetCore.Http.HttpResults;
-
 namespace HospitalService.implementations;
 
 public class HospitalRepo : IHospitalRepository
@@ -64,8 +61,8 @@ public class HospitalRepo : IHospitalRepository
                     foreach (string el in arrayCities)
                     {
                         var ci = new Class_Item();
-                        ci.Value = counter++;
-                        ci.Description = el;
+                        ci.value = counter++;
+                        ci.description = el;
                         list.Add(ci);
                     }
                 }
@@ -90,8 +87,8 @@ public class HospitalRepo : IHospitalRepository
                     foreach (string el in arrayCities)
                     {
                         var ci = new Class_Item();
-                        ci.Value = counter++;
-                        ci.Description = el;
+                        ci.value = counter++;
+                        ci.description = el;
                         list.Add(ci);
                     }
                 }
@@ -302,8 +299,8 @@ public class HospitalRepo : IHospitalRepository
                 {
 
                     var ci = new Class_Item();
-                    ci.Value = Convert.ToInt32(ch.HospitalNo);
-                    ci.Description = ch.HospitalName;
+                    ci.value = Convert.ToInt32(ch.HospitalNo);
+                    ci.description = ch.HospitalName;
                     list.Add(ci);
 
                 }
@@ -317,13 +314,14 @@ public class HospitalRepo : IHospitalRepository
         var list = new List<Class_Item>();
         //make array from string
         var ar = hosp.Split(',').ToList();
-        foreach(string test in ar){
-           HospitalForReturnDTO? help = await GetSpecificHospital(test);
+        foreach (string test in ar)
+        {
+            HospitalForReturnDTO? help = await GetSpecificHospital(test);
             if (help != null)
             {
                 var ci = new Class_Item();
-                ci.Value = Convert.ToInt32(help.HospitalNo);
-                ci.Description = help.HospitalName;
+                ci.value = Convert.ToInt32(help.HospitalNo);
+                ci.description = help.HospitalName;
                 list.Add(ci);
             }
         }
@@ -332,10 +330,57 @@ public class HospitalRepo : IHospitalRepository
     public async Task<string?> getHospitalNameFromId(string hosp)
     {
         var help = await GetSpecificHospital(hosp);
-        if(help != null){return help.HospitalName;}
+        if (help != null) { return help.HospitalName; }
         return null;
-        
+
     }
+    public async Task<List<Class_Item>?> HospitalsPerCountryTelCode(string telcode)
+    {
+         var list = new List<Class_Item>();
+        var query = "select * from Hospitals h inner join Countries c on h.Country = c.IsoCode where c.TelCode = @telcode";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query, new { telcode });
+            if (res != null)
+            {
+                foreach (Class_Hospital ch in res)
+                {
+
+                    var ci = new Class_Item();
+                    ci.value = Convert.ToInt32(ch.HospitalNo);
+                    ci.description = ch.HospitalName;
+                    list.Add(ci);
+
+                }
+                return list;
+            }
+        }
+        return null;
+    }
+    public async Task<List<Class_Item>?> HospitalsPerCountryIso(string country)
+    {
+         var list = new List<Class_Item>();
+        var query = "select * from Hospitals h inner join Countries c on h.Country = c.IsoCode where c.IsoCode = @country";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query, new { country });
+            if (res != null)
+            {
+                foreach (Class_Hospital ch in res)
+                {
+
+                    var ci = new Class_Item();
+                    ci.value = Convert.ToInt32(ch.HospitalNo);
+                    ci.description = ch.HospitalName;
+                    list.Add(ci);
+
+                }
+                return list;
+            }
+        }
+        return null;
+    }
+
 
 
     public async Task<List<HospitalForReturnDTO>?> GetAllHospitals()
@@ -357,7 +402,6 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-  
     public async Task<Class_Hospital?> GetClassHospital(string hospitalNo)
     {
         var hos = hospitalNo.makeSureTwoChar();
@@ -474,20 +518,4 @@ public class HospitalRepo : IHospitalRepository
 
 
 
-    public string CreateInstitutionalReport(int hospitalNo)
-    {
-        throw new NotImplementedException();
-    }
-
-    public string UpdateInstitutionalReport(InstitutionalDTO rep, int hospitalNo, int soort)
-    {
-        throw new NotImplementedException();
-    }
-
-    public InstitutionalDTO GetInstitutionalReport(int hospitalNo, int soort)
-    {
-        throw new NotImplementedException();
-    }
-
-    
 }

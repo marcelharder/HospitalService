@@ -153,6 +153,11 @@ public class HospitalController : BaseApiController
     [HttpGet("IsThisHospitalImplementingOVI/{id}")]
     public async Task<IActionResult> getOVI(string id) { return Ok(await _hos.HospitalImplementsOVI(id)); }
 
+    [HttpGet("getHospitalItemsPerCountryFromIso/{country}")]
+    public async Task<IActionResult> getHIPCFI(string country) { return Ok(await _hos.HospitalsPerCountryIso(country)); }
+
+    [HttpGet("getHospitalItemsPerCountryFromTelCode/{telcode}")]
+    public async Task<IActionResult> getHIPDFT(string telcode) { return Ok(await _hos.HospitalsPerCountryTelCode(telcode)); }
 
 
 }
