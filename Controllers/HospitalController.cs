@@ -101,7 +101,6 @@ public class HospitalController : BaseApiController
             await _hos.AddHospital(ch);
             return Ok(await _hos.GetSpecificHospital(ch.HospitalNo));
         }
-
     }
   
     [HttpDelete("{id}")]
@@ -158,7 +157,11 @@ public class HospitalController : BaseApiController
 
     [HttpGet("getHospitalItemsPerCountryFromTelCode/{telcode}")]
     public async Task<IActionResult> getHIPDFT(string telcode) { return Ok(await _hos.HospitalsPerCountryTelCode(telcode)); }
-
+    [HttpGet("allHospitals")]
+    public async Task<IActionResult> getAH() { return Ok(await _hos.AllHospitals()); }
+    
+    [HttpGet("pagedList")]
+    public async Task<IActionResult> getPL([FromQuery] HospitalParams hp) { return Ok(await _hos.GetPagedHospitalList(hp)); }
 
 }
 

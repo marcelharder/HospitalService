@@ -126,6 +126,20 @@ public class HospitalRepo : IHospitalRepository
         }
         return result;
     }
+    public async Task<int?> GetCountryIdFromDescription(string description)
+    {
+        var result = 0;
+        var query = "SELECT * FROM Countries WHERE Description = @description";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { description });
+            if (res != null)
+            {
+                result = res.Id;
+            }
+        }
+        return result;
+    }
     public async Task<int> UpdateCountry(ClassCountry pv)
     {
         var query = "UPDATE Countries SET TelCode = @TelCode, IsoCode = @IsoCode,Description = @Description, Cities = @Cities WHERE Id = @Id";
@@ -141,11 +155,39 @@ public class HospitalRepo : IHospitalRepository
 
         return 1;
     }
+    public async Task<string?> GetCountryNameFromId(string id)
+    {
+        var result = "";
+        var query = "SELECT * FROM Countries WHERE Id = @id";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { id });
+            if (res != null)
+            {
+                result = res.Description;
+            }
+        }
+        return result;
+    }
+    public async Task<string?> GetIsoCodeFromId(string id)
+    {
+        var result = "";
+        var query = "SELECT * FROM Countries WHERE Id = @id";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { id });
+            if (res != null)
+            {
+                result = res.IsoCode;
+            }
+        }
+        return result;
+    }
 
     #endregion
 
 
-
+    #region <!--Hospital Stuff -->
     public async Task<Class_Hospital?> AddHospital(Class_Hospital cp)
     {
         var query = "INSERT INTO Hospitals (SelectedHospitalName,HospitalName,HospitalNo,Description,Address,Telephone," +
@@ -336,7 +378,7 @@ public class HospitalRepo : IHospitalRepository
     }
     public async Task<List<Class_Item>?> HospitalsPerCountryTelCode(string telcode)
     {
-         var list = new List<Class_Item>();
+        var list = new List<Class_Item>();
         var query = "select * from Hospitals h inner join Countries c on h.Country = c.IsoCode where c.TelCode = @telcode";
         using (var connection = _dc.CreateConnection())
         {
@@ -359,7 +401,7 @@ public class HospitalRepo : IHospitalRepository
     }
     public async Task<List<Class_Item>?> HospitalsPerCountryIso(string country)
     {
-         var list = new List<Class_Item>();
+        var list = new List<Class_Item>();
         var query = "select * from Hospitals h inner join Countries c on h.Country = c.IsoCode where c.IsoCode = @country";
         using (var connection = _dc.CreateConnection())
         {
@@ -380,9 +422,29 @@ public class HospitalRepo : IHospitalRepository
         }
         return null;
     }
+    public async Task<List<Class_Item>?> AllHospitals()
+    {
+        var list = new List<Class_Item>();
+        var query = "select * from Hospitals";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query);
+            if (res != null)
+            {
+                foreach (Class_Hospital ch in res)
+                {
 
+                    var ci = new Class_Item();
+                    ci.value = Convert.ToInt32(ch.HospitalNo);
+                    ci.description = ch.HospitalName;
+                    list.Add(ci);
 
-
+                }
+                return list;
+            }
+        }
+        return null;
+    }
     public async Task<List<HospitalForReturnDTO>?> GetAllHospitals()
     {
         var help = new HospitalForReturnDTO();
@@ -514,8 +576,19 @@ public class HospitalRepo : IHospitalRepository
         }
         return 1;
     }
+    public async Task<PagedList<Class_Hospital>> GetPagedHospitalList(HospitalParams hp)
+    {
+        if (hp.code != null)
+        {
+            var hospitals = await GetAllFullHospitalsPerCountry(hp.code);
+            if (hospitals != null)
+            {
+                return PagedList<Class_Hospital>.Create(hospitals, hp.PageNumber, hp.PageSize);
+            }
+        }
+        return null;
+    }
 
 
-
-
+    #endregion
 }
