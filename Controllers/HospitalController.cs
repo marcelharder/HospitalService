@@ -27,6 +27,7 @@ public class HospitalController : BaseApiController
         _cloudinary = new Cloudinary(acc);
     }
 
+   
     [HttpGet("allFullHospitals")]
     public async Task<IActionResult> getAllHospitals()
     {
@@ -162,12 +163,8 @@ public class HospitalController : BaseApiController
     [HttpGet("sphlist_full/{currentVendor}/{currentCountry}")]
     public async Task<IActionResult> SPH(string currentVendor, string currentCountry) { return Ok(await _hos.GetSpPH(currentVendor,currentCountry)); }
 
-
-
-
-
-
-
+    [HttpGet("sphlist/{currentVendor}/{currentCountry}")]
+    public async Task<IActionResult> ItemsSPH(string currentVendor, string currentCountry) { return Ok(await _hos.GetItemsSpPH(currentVendor,currentCountry)); }
 
 }
 

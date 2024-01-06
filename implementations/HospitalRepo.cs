@@ -588,7 +588,6 @@ public class HospitalRepo : IHospitalRepository
         }
         return null;
     }
-
     public async Task<List<Class_Hospital>?> GetSpPH(string currentVendor, string currentCountry)
     {
         var l = new List<Class_Hospital>();
@@ -614,7 +613,6 @@ public class HospitalRepo : IHospitalRepository
         }
         return l;
     }
-
     public async Task<List<Class_Hospital>?> GetNegSpPH(string currentVendor, string currentCountry)
     {
         var l = new List<Class_Hospital>();
@@ -638,6 +636,31 @@ public class HospitalRepo : IHospitalRepository
                 else
                 {
                     l.Add(x); // add all the hospitals if vendors = null
+                }
+            }
+        }
+        return l;
+    }
+
+    public async Task<List<Class_Item>?> GetItemsSpPH(string currentVendor, string currentCountry)
+    {
+        var l = new List<Class_Item>();
+        var result = await GetAllFullHospitalsPerCountry(currentCountry);
+        if (result != null)
+        {
+            foreach (Class_Hospital x in result)
+            {
+                if (x.Vendors != null)
+                {
+                    var vendorArray = x.Vendors.Split(',');
+                    if (vendorArray.Contains(currentVendor))
+                    {
+                        
+                        var help = new Class_Item();
+                         help.value = Convert.ToInt32(x.HospitalNo);
+                         help.description = x.SelectedHospitalName;
+                         l.Add(help); 
+                    }
                 }
             }
         }

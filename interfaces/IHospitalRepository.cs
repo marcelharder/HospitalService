@@ -1,3 +1,4 @@
+
 namespace HospitalService.interfaces;
 
 public interface IHospitalRepository
@@ -32,4 +33,8 @@ public interface IHospitalRepository
     Task<string?> GetIsoCodeFromId(string id);
     Task<List<Class_Hospital>?> GetSpPH(string selectedVendor, string currentCountry);
     Task<List<Class_Hospital>?> GetNegSpPH(string selectedVendor, string currentCountry);
+    Task<List<Class_Item>?> GetItemsSpPH(string selectedVendor, string currentCountry);
+
+
+   
 }
