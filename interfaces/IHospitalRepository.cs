@@ -9,7 +9,7 @@ public interface IHospitalRepository
     Task<Class_Hospital?> AddHospital(Class_Hospital p);
     Task<bool> CheckHospitalExists(string hospitalNo);
     Task<Class_Hospital?> GetClassHospital(string id);
-    Task<bool> HospitalImplementsOVI(string id);
+    Task<int> HospitalImplementsOVI(string id);
     Task<List<Class_Hospital>?> GetAllFullHospitals();
     Task<List<Class_Hospital>?> GetAllFullHospitalsPerCountry(string id);
     Task<List<Class_Item>?> getHospitalsPerCountry(string id);
@@ -30,4 +30,6 @@ public interface IHospitalRepository
     Task<int?> GetCountryIdFromDescription(string description);
     Task<string?> GetCountryNameFromId(string id);
     Task<string?> GetIsoCodeFromId(string id);
+    Task<List<Class_Hospital>?> GetSpPH(string selectedVendor, string currentCountry);
+    Task<List<Class_Hospital>?> GetNegSpPH(string selectedVendor, string currentCountry);
 }

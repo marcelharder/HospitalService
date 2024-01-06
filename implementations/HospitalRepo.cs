@@ -492,7 +492,7 @@ public class HospitalRepo : IHospitalRepository
             return null;
         }
     }
-    public async Task<bool> HospitalImplementsOVI(string id)
+    public async Task<int> HospitalImplementsOVI(string id)
     {
         var selectedHospital = await GetSpecificHospital(id);
         if (selectedHospital != null)
@@ -501,7 +501,7 @@ public class HospitalRepo : IHospitalRepository
         }
         else
         {
-            return false;
+            return 0;
         }
     }
     public async Task<int> UpdateHospital(Class_Hospital pv)
@@ -587,6 +587,61 @@ public class HospitalRepo : IHospitalRepository
             }
         }
         return null;
+    }
+
+    public async Task<List<Class_Hospital>?> GetSpPH(string currentVendor, string currentCountry)
+    {
+        var l = new List<Class_Hospital>();
+        var result = await GetAllFullHospitalsPerCountry(currentCountry);
+        if (result != null)
+        {
+            foreach (Class_Hospital x in result)
+            {
+                if (x.Vendors != null)
+                {
+                    var vendorArray = x.Vendors.Split(',');
+                    if (vendorArray.Contains(currentVendor))
+                    {
+                        l.Add(x);
+                        /*  var help = new Class_Item();
+                         help.value = Convert.ToInt32(x.HospitalNo);
+                         help.description = x.SelectedHospitalName;
+                         l.Add(help); */
+
+                    }
+                }
+            }
+        }
+        return l;
+    }
+
+    public async Task<List<Class_Hospital>?> GetNegSpPH(string currentVendor, string currentCountry)
+    {
+        var l = new List<Class_Hospital>();
+        var result = await GetAllFullHospitalsPerCountry(currentCountry);
+        if (result != null)
+        {
+            foreach (Class_Hospital x in result)
+            {
+                if (x.Vendors != null)
+                {
+                    var vendorArray = x.Vendors.Split(',');
+                    if (!vendorArray.Contains(currentVendor))
+                    {
+                        l.Add(x);
+                        /*  var help = new Class_Item();
+                         help.value = Convert.ToInt32(x.HospitalNo);
+                         help.description = x.SelectedHospitalName;
+                         l.Add(help); */
+                    }
+                }
+                else
+                {
+                    l.Add(x); // add all the hospitals if vendors = null
+                }
+            }
+        }
+        return l;
     }
 
 

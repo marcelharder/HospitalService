@@ -39,6 +39,7 @@ public class HospitalController : BaseApiController
         foreach (Class_Hospital ch in result) { ret.Add(_map.mapToHospitalForReturn(ch)); }
         return Ok(ret);
     }
+   
     [HttpGet("allFullHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalsperCountry(string id)
     {
@@ -51,6 +52,7 @@ public class HospitalController : BaseApiController
         }
         return Ok();
     }
+   
     [HttpGet("getHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalInCountry(string id) { return Ok(await _hos.getHospitalsPerCountry(id)); }
    
@@ -73,8 +75,9 @@ public class HospitalController : BaseApiController
     
     [HttpGet("getHospital/{no}")]// get specific hospital details
     public async Task<IActionResult> GetHospitalDetails(string no) { return Ok(await _hos.GetSpecificHospital(no)); }
+   
     [HttpPut]
-    public async Task<IActionResult> PutHospitalAsync([FromBody] HospitalForReturnDTO hr) // for requests coming from soa
+    public async Task<IActionResult> PutHospitalAsync([FromBody] HospitalForReturnDTO hr) 
     {
         if (hr.HospitalNo != null)
         {
@@ -138,17 +141,7 @@ public class HospitalController : BaseApiController
         return BadRequest("Could not add the photo ...");
     }
    
-    [HttpGet("hospitalByUser/{id}")]
-    public async Task<IActionResult> getCurrentHospitalForUser(int id)
-    {
-        var result = await _hos.GetSpecificHospital(id.ToString().makeSureTwoChar());
-        if (result == null)
-        {
-            return NotFound();
-        }
-        return Ok(result.HospitalName);
-    }
-  
+   
     [HttpGet("IsThisHospitalImplementingOVI/{id}")]
     public async Task<IActionResult> getOVI(string id) { return Ok(await _hos.HospitalImplementsOVI(id)); }
 
@@ -162,6 +155,19 @@ public class HospitalController : BaseApiController
     
     [HttpGet("pagedList")]
     public async Task<IActionResult> getPL([FromQuery] HospitalParams hp) { return Ok(await _hos.GetPagedHospitalList(hp)); }
+
+   [HttpGet("neg_sphlist_full/{currentVendor}/{currentCountry}")] // In which hospital is the vendor active
+    public async Task<IActionResult> NSPH(string currentVendor, string currentCountry) { return Ok(await _hos.GetNegSpPH(currentVendor,currentCountry)); }
+
+    [HttpGet("sphlist_full/{currentVendor}/{currentCountry}")]
+    public async Task<IActionResult> SPH(string currentVendor, string currentCountry) { return Ok(await _hos.GetSpPH(currentVendor,currentCountry)); }
+
+
+
+
+
+
+
 
 }
 
