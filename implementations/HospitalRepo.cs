@@ -188,6 +188,43 @@ public class HospitalRepo : IHospitalRepository
 
 
     #region <!--Hospital Stuff -->
+    public async Task<string?> getHospitalVendors(string hospitalNo)
+    {
+        hospitalNo = hospitalNo.makeSureTwoChar();
+        var hospital = await GetClassHospital(hospitalNo);
+        return hospital.Vendors;
+    }
+    public async Task<string?> addVendors(string vendor, string hospitalNo)
+    {
+        var vendorCount = 0;
+        var hospital = await GetClassHospital(hospitalNo);
+
+        if (hospital.Vendors == null)
+        {
+            hospital.Vendors = vendor;
+            UpdateHospital(hospital);
+            return "Vendor added";
+        }
+        else
+        {
+            var vendorarray = hospital.Vendors.Split(',').ToList();
+            if (!vendorarray.Contains(vendor))
+            {
+                vendorCount = vendorarray.Count();
+                vendorarray.Add(vendor);
+                
+                var newCount = vendorarray.Count();
+                if (newCount > vendorCount)
+                {
+                    hospital.Vendors = string.Join(",",vendorarray);
+                    UpdateHospital(hospital);
+                    return "Vendor added";
+                }
+                else { return "Vendor was not added ..."; }
+            }
+            else { return "Vendor exists already..."; }
+        }
+    }
     public async Task<Class_Hospital?> AddHospital(Class_Hospital cp)
     {
         var query = "INSERT INTO Hospitals (SelectedHospitalName,HospitalName,HospitalNo,Description,Address,Telephone," +
@@ -514,7 +551,7 @@ public class HospitalRepo : IHospitalRepository
        "SMSSendTime = @SMSSendTime ,TriggerOneMonth = @TriggerOneMonth,TriggerTwoMonth = @TriggerTwoMonth, " +
        "TriggerThreeMonth = @TriggerThreeMonth,DBBackend = @DBBackend, " +
        "Contact = @Contact,Contact_image = @Contact_image,PostalCode = @PostalCode, " +
-       "usesOnlineValveInventory = @usesOnlineValveInventory, ImageUrl = @ImageUrl,OpReportDetails1 = @OpreportDetails1, " +
+       "UsesOnlineValveInventory = @UsesOnlineValveInventory, ImageUrl = @ImageUrl,OpReportDetails1 = @OpreportDetails1, " +
        "OpreportDetails2 = @OpreportDetails2, OpreportDetails3 = @OpreportDetails3, OpreportDetails4 = @OpreportDetails4, " +
        "OpreportDetails5 = @OpreportDetails5, OpreportDetails6 = @OpreportDetails6, OpreportDetails7 = @OpreportDetails7, " +
        "OpreportDetails8 = @OpreportDetails8, OpreportDetails9 = @OpreportDetails9 WHERE HospitalNo = @hospitalNo";
@@ -541,7 +578,7 @@ public class HospitalRepo : IHospitalRepository
 
         parameters.Add("SampleMrn", pv.SampleMrn);
         parameters.Add("Regexpr", pv.RegExpr);
-        parameters.Add("usesOnlineValveInventory", pv.UsesOnlineValveInventory);
+        parameters.Add("UsesOnlineValveInventory", pv.UsesOnlineValveInventory);
         parameters.Add("ImageUrl", pv.ImageUrl);
         parameters.Add("OpreportDetails1", pv.OpReportDetails1);
         parameters.Add("OpreportDetails2", pv.OpReportDetails2);
@@ -576,7 +613,7 @@ public class HospitalRepo : IHospitalRepository
         }
         return 1;
     }
-    public async Task<PagedList<Class_Hospital>> GetPagedHospitalList(HospitalParams hp)
+    public async Task<PagedList<Class_Hospital>?> GetPagedHospitalList(HospitalParams hp)
     {
         if (hp.code != null)
         {
@@ -641,7 +678,6 @@ public class HospitalRepo : IHospitalRepository
         }
         return l;
     }
-
     public async Task<List<Class_Item>?> GetItemsSpPH(string currentVendor, string currentCountry)
     {
         var l = new List<Class_Item>();
@@ -655,11 +691,11 @@ public class HospitalRepo : IHospitalRepository
                     var vendorArray = x.Vendors.Split(',');
                     if (vendorArray.Contains(currentVendor))
                     {
-                        
+
                         var help = new Class_Item();
-                         help.value = Convert.ToInt32(x.HospitalNo);
-                         help.description = x.SelectedHospitalName;
-                         l.Add(help); 
+                        help.value = Convert.ToInt32(x.HospitalNo);
+                        help.description = x.SelectedHospitalName;
+                        l.Add(help);
                     }
                 }
             }

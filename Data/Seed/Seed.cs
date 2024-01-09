@@ -8,7 +8,9 @@ public class Seed
             var userData = await System.IO.File.ReadAllTextAsync("Data/Seed/overview-erasmus-site.json");
             var emp = JsonSerializer.Deserialize<List<Class_Hospital>>(userData);
             if(emp != null){
-            foreach (var item in emp) { context.Hospitals.Add(item); }
+            foreach (var item in emp) { 
+                context.Hospitals.Add(item);
+                 }
             await context.SaveChangesAsync();
             }
         }

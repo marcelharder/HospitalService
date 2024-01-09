@@ -21,7 +21,7 @@ public class Class_Hospital
     public string? Country { get; set; }
     public String? SampleMrn { get; set; }
     public String? RegExpr { get; set; }
-    public bool UsesOnlineValveInventory { get; set; }
+    public int UsesOnlineValveInventory { get; set; }
     public String? ImageUrl { get; set; }
     public String? Vendors { get; set; }
     public String? Rp { get; set; }

@@ -41,6 +41,12 @@ public class HospitalController : BaseApiController
         return Ok(ret);
     }
    
+    [HttpGet("getHospitalVendors/{id}")]
+    public async Task<IActionResult> getHpspitalVendors(string id){return Ok(await _hos.getHospitalVendors(id)); }
+
+    [HttpGet("addVendorToHospital/{vendor}/{hospitalNo}")]
+    public async Task<IActionResult> addVendorToHospital(string vendor, string hospitalNo){return Ok(await _hos.addVendors(vendor, hospitalNo));}
+
     [HttpGet("allFullHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalsperCountry(string id)
     {

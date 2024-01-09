@@ -5,7 +5,7 @@
     "City": "Eindhoven",
     "Country": "NL",
     "HospitalName": "Catharina Ziekenhuis Eindhoven",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1645880879/Hospitals/catharina.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -23,7 +23,7 @@
     "City": "Groningen",
     "Country": "NL",
     "HospitalName": "Academisch Ziekenhuis Groningen",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769564/Hospitals/azg.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -41,7 +41,7 @@
     "City": "Maastricht",
     "Country": "NL",
     "HospitalName": "Maastricht Universitair Medisch Centrum",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/maastricht.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -65,7 +65,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/amc.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -89,7 +89,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -113,7 +113,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -137,7 +137,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -161,7 +161,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -185,7 +185,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -209,7 +209,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -233,7 +233,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/isala.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -257,7 +257,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -281,7 +281,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -305,7 +305,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -329,7 +329,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -353,7 +353,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -377,7 +377,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -401,7 +401,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -425,7 +425,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -449,7 +449,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -473,7 +473,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -497,7 +497,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -521,7 +521,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/amphia.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -545,7 +545,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/olvg.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -569,7 +569,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/olvg.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -593,7 +593,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/olvg.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -617,7 +617,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/olvg.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -641,7 +641,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/olvg.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -665,7 +665,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567769563/Hospitals/mst.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -690,7 +690,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1567770782/Hospitals/kfafh.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -714,7 +714,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1575642656/Hospitals/pscc-riyadh-01.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -738,7 +738,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 1,
+    "UsesOnlineValveInventory": 1,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1600619535/Hospitals/UCRiverside.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -762,7 +762,7 @@
     "Fax": "",
     "SampleMrn": "",
     "RegExpr": "",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "ImageUrl": "https://res.cloudinary.com/marcelcloud/image/upload/v1600619669/Hospitals/papworth.jpg",
     "OpReportDetails1": "",
     "OpReportDetails2": "",
@@ -777,7 +777,7 @@
   {
     "Country": "AT",
     "HospitalNo": "61",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -789,7 +789,7 @@
   {
     "Country": "AT",
     "HospitalNo": "62",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -801,7 +801,7 @@
   {
     "Country": "AT",
     "HospitalNo": "63",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -813,7 +813,7 @@
   {
     "Country": "BE",
     "HospitalNo": "64",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -825,7 +825,7 @@
   {
     "Country": "BE",
     "HospitalNo": "65",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -837,7 +837,7 @@
   {
     "Country": "BE",
     "HospitalNo": "66",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -849,7 +849,7 @@
   {
     "Country": "BE",
     "HospitalNo": "67",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -861,7 +861,7 @@
   {
     "Country": "BG",
     "HospitalNo": "68",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -873,7 +873,7 @@
   {
     "Country": "BG",
     "HospitalNo": "69",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -885,7 +885,7 @@
   {
     "Country": "CZ",
     "HospitalNo": "70",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -897,7 +897,7 @@
   {
     "Country": "CZ",
     "HospitalNo": "71",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -909,7 +909,7 @@
   {
     "Country": "CZ",
     "HospitalNo": "72",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -921,7 +921,7 @@
   {
     "Country": "CZ",
     "HospitalNo": "73",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -933,7 +933,7 @@
   {
     "Country": "DK",
     "HospitalNo": "74",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -945,7 +945,7 @@
   {
     "Country": "DK",
     "HospitalNo": "75",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -957,7 +957,7 @@
   {
     "Country": "DK",
     "HospitalNo": "76",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -969,7 +969,7 @@
   {
     "Country": "DK",
     "HospitalNo": "77",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -981,7 +981,7 @@
   {
     "Country": "EE",
     "HospitalNo": "78",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -993,7 +993,7 @@
   {
     "Country": "EE",
     "HospitalNo": "79",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1005,7 +1005,7 @@
   {
     "Country": "FI",
     "HospitalNo": "80",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1017,7 +1017,7 @@
   {
     "Country": "FI",
     "HospitalNo": "81",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1029,7 +1029,7 @@
   {
     "Country": "FI",
     "HospitalNo": "82",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1041,7 +1041,7 @@
   {
     "Country": "FI",
     "HospitalNo": "83",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1053,7 +1053,7 @@
   {
     "Country": "FI",
     "HospitalNo": "84",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1065,7 +1065,7 @@
   {
     "Country": "FI",
     "HospitalNo": "85",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1077,7 +1077,7 @@
   {
     "Country": "FI",
     "HospitalNo": "86",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1089,7 +1089,7 @@
   {
     "Country": "FI",
     "HospitalNo": "87",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1101,7 +1101,7 @@
   {
     "Country": "FR",
     "HospitalNo": "88",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1113,7 +1113,7 @@
   {
     "Country": "FR",
     "HospitalNo": "89",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1125,7 +1125,7 @@
   {
     "Country": "FR",
     "HospitalNo": "90",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1137,7 +1137,7 @@
   {
     "Country": "FR",
     "HospitalNo": "91",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1149,7 +1149,7 @@
   {
     "Country": "FR",
     "HospitalNo": "92",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1161,7 +1161,7 @@
   {
     "Country": "FR",
     "HospitalNo": "93",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1173,7 +1173,7 @@
   {
     "Country": "FR",
     "HospitalNo": "94",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1185,7 +1185,7 @@
   {
     "Country": "FR",
     "HospitalNo": "95",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1197,7 +1197,7 @@
   {
     "Country": "FR",
     "HospitalNo": "96",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1209,7 +1209,7 @@
   {
     "Country": "FR",
     "HospitalNo": "97",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1221,7 +1221,7 @@
   {
     "Country": "FR",
     "HospitalNo": "98",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1233,7 +1233,7 @@
   {
     "Country": "FR",
     "HospitalNo": "99",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1245,7 +1245,7 @@
   {
     "Country": "FR",
     "HospitalNo": "100",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1257,7 +1257,7 @@
   {
     "Country": "FR",
     "HospitalNo": "101",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1269,7 +1269,7 @@
   {
     "Country": "FR",
     "HospitalNo": "102",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1281,7 +1281,7 @@
   {
     "Country": "FR",
     "HospitalNo": "103",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1293,7 +1293,7 @@
   {
     "Country": "FR",
     "HospitalNo": "104",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1305,7 +1305,7 @@
   {
     "Country": "FR",
     "HospitalNo": "105",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1317,7 +1317,7 @@
   {
     "Country": "FR",
     "HospitalNo": "106",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1329,7 +1329,7 @@
   {
     "Country": "FR",
     "HospitalNo": "107",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1341,7 +1341,7 @@
   {
     "Country": "FR",
     "HospitalNo": "108",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1353,7 +1353,7 @@
   {
     "Country": "DE",
     "HospitalNo": "109",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1365,7 +1365,7 @@
   {
     "Country": "DE",
     "HospitalNo": "110",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1377,7 +1377,7 @@
   {
     "Country": "DE",
     "HospitalNo": "111",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1389,7 +1389,7 @@
   {
     "Country": "DE",
     "HospitalNo": "112",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1401,7 +1401,7 @@
   {
     "Country": "DE",
     "HospitalNo": "113",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1413,7 +1413,7 @@
   {
     "Country": "DE",
     "HospitalNo": "114",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1425,7 +1425,7 @@
   {
     "Country": "DE",
     "HospitalNo": "115",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1437,7 +1437,7 @@
   {
     "Country": "DE",
     "HospitalNo": "116",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1449,7 +1449,7 @@
   {
     "Country": "DE",
     "HospitalNo": "117",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1461,7 +1461,7 @@
   {
     "Country": "DE",
     "HospitalNo": "118",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1473,7 +1473,7 @@
   {
     "Country": "DE",
     "HospitalNo": "119",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1485,7 +1485,7 @@
   {
     "Country": "DE",
     "HospitalNo": "120",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1497,7 +1497,7 @@
   {
     "Country": "DE",
     "HospitalNo": "121",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1509,7 +1509,7 @@
   {
     "Country": "DE",
     "HospitalNo": "122",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1521,7 +1521,7 @@
   {
     "Country": "DE",
     "HospitalNo": "123",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1533,7 +1533,7 @@
   {
     "Country": "DE",
     "HospitalNo": "124",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1545,7 +1545,7 @@
   {
     "Country": "DE",
     "HospitalNo": "125",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1557,7 +1557,7 @@
   {
     "Country": "DE",
     "HospitalNo": "126",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1569,7 +1569,7 @@
   {
     "Country": "DE",
     "HospitalNo": "127",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1581,7 +1581,7 @@
   {
     "Country": "DE",
     "HospitalNo": "128",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1593,7 +1593,7 @@
   {
     "Country": "DE",
     "HospitalNo": "129",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1605,7 +1605,7 @@
   {
     "Country": "DE",
     "HospitalNo": "130",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1617,7 +1617,7 @@
   {
     "Country": "DE",
     "HospitalNo": "131",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1629,7 +1629,7 @@
   {
     "Country": "DE",
     "HospitalNo": "132",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1641,7 +1641,7 @@
   {
     "Country": "DE",
     "HospitalNo": "133",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1653,7 +1653,7 @@
   {
     "Country": "DE",
     "HospitalNo": "134",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1665,7 +1665,7 @@
   {
     "Country": "DE",
     "HospitalNo": "135",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1677,7 +1677,7 @@
   {
     "Country": "GR",
     "HospitalNo": "136",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1689,7 +1689,7 @@
   {
     "Country": "GR",
     "HospitalNo": "137",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1701,7 +1701,7 @@
   {
     "Country": "GR",
     "HospitalNo": "138",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1713,7 +1713,7 @@
   {
     "Country": "GR",
     "HospitalNo": "139",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1725,7 +1725,7 @@
   {
     "Country": "GR",
     "HospitalNo": "140",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1737,7 +1737,7 @@
   {
     "Country": "HU",
     "HospitalNo": "141",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1749,7 +1749,7 @@
   {
     "Country": "HU",
     "HospitalNo": "142",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1761,7 +1761,7 @@
   {
     "Country": "HU",
     "HospitalNo": "143",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1773,7 +1773,7 @@
   {
     "Country": "HU",
     "HospitalNo": "144",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1785,7 +1785,7 @@
   {
     "Country": "IS",
     "HospitalNo": "145",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1797,7 +1797,7 @@
   {
     "Country": "IR",
     "HospitalNo": "146",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1809,7 +1809,7 @@
   {
     "Country": "IR",
     "HospitalNo": "147",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1821,7 +1821,7 @@
   {
     "Country": "IT",
     "HospitalNo": "148",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1833,7 +1833,7 @@
   {
     "Country": "IT",
     "HospitalNo": "149",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1845,7 +1845,7 @@
   {
     "Country": "IT",
     "HospitalNo": "150",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1857,7 +1857,7 @@
   {
     "Country": "IT",
     "HospitalNo": "151",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1869,7 +1869,7 @@
   {
     "Country": "IT",
     "HospitalNo": "152",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1881,7 +1881,7 @@
   {
     "Country": "IT",
     "HospitalNo": "153",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1893,7 +1893,7 @@
   {
     "Country": "IT",
     "HospitalNo": "154",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1905,7 +1905,7 @@
   {
     "Country": "IT",
     "HospitalNo": "155",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1917,7 +1917,7 @@
   {
     "Country": "IT",
     "HospitalNo": "156",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1929,7 +1929,7 @@
   {
     "Country": "IT",
     "HospitalNo": "157",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1941,7 +1941,7 @@
   {
     "Country": "IT",
     "HospitalNo": "158",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1953,7 +1953,7 @@
   {
     "Country": "IT",
     "HospitalNo": "159",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1965,7 +1965,7 @@
   {
     "Country": "IT",
     "HospitalNo": "160",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1977,7 +1977,7 @@
   {
     "Country": "IT",
     "HospitalNo": "161",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -1989,7 +1989,7 @@
   {
     "Country": "IT",
     "HospitalNo": "162",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2001,7 +2001,7 @@
   {
     "Country": "IT",
     "HospitalNo": "163",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2013,7 +2013,7 @@
   {
     "Country": "IT",
     "HospitalNo": "164",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2025,7 +2025,7 @@
   {
     "Country": "IT",
     "HospitalNo": "165",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2037,7 +2037,7 @@
   {
     "Country": "IT",
     "HospitalNo": "166",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2049,7 +2049,7 @@
   {
     "Country": "IT",
     "HospitalNo": "167",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2061,7 +2061,7 @@
   {
     "Country": "IT",
     "HospitalNo": "168",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2073,7 +2073,7 @@
   {
     "Country": "IT",
     "HospitalNo": "169",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2085,7 +2085,7 @@
   {
     "Country": "LV",
     "HospitalNo": "170",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2097,7 +2097,7 @@
   {
     "Country": "LV",
     "HospitalNo": "171",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2109,7 +2109,7 @@
   {
     "Country": "LT",
     "HospitalNo": "172",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2121,7 +2121,7 @@
   {
     "Country": "LU",
     "HospitalNo": "173",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2133,7 +2133,7 @@
   {
     "Country": "MK",
     "HospitalNo": "174",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2145,7 +2145,7 @@
   {
     "Country": "NO",
     "HospitalNo": "175",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2157,7 +2157,7 @@
   {
     "Country": "NO",
     "HospitalNo": "176",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2169,7 +2169,7 @@
   {
     "Country": "NO",
     "HospitalNo": "177",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2181,7 +2181,7 @@
   {
     "Country": "NO",
     "HospitalNo": "178",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2193,7 +2193,7 @@
   {
     "Country": "PL",
     "HospitalNo": "179",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2205,7 +2205,7 @@
   {
     "Country": "PL",
     "HospitalNo": "180",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2217,7 +2217,7 @@
   {
     "Country": "PL",
     "HospitalNo": "181",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2229,7 +2229,7 @@
   {
     "Country": "PL",
     "HospitalNo": "182",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2241,7 +2241,7 @@
   {
     "Country": "PL",
     "HospitalNo": "183",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2253,7 +2253,7 @@
   {
     "Country": "PL",
     "HospitalNo": "184",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2265,7 +2265,7 @@
   {
     "Country": "PL",
     "HospitalNo": "185",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2277,7 +2277,7 @@
   {
     "Country": "PT",
     "HospitalNo": "186",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2289,7 +2289,7 @@
   {
     "Country": "PT",
     "HospitalNo": "187",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2301,7 +2301,7 @@
   {
     "Country": "PT",
     "HospitalNo": "188",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2313,7 +2313,7 @@
   {
     "Country": "PT",
     "HospitalNo": "189",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2325,7 +2325,7 @@
   {
     "Country": "PT",
     "HospitalNo": "190",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2337,7 +2337,7 @@
   {
     "Country": "PT",
     "HospitalNo": "191",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2349,7 +2349,7 @@
   {
     "Country": "PT",
     "HospitalNo": "192",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2361,7 +2361,7 @@
   {
     "Country": "PT",
     "HospitalNo": "193",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2373,7 +2373,7 @@
   {
     "Country": "PT",
     "HospitalNo": "194",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2385,7 +2385,7 @@
   {
     "Country": "PT",
     "HospitalNo": "195",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2397,7 +2397,7 @@
   {
     "Country": "RO",
     "HospitalNo": "196",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2409,7 +2409,7 @@
   {
     "Country": "RO",
     "HospitalNo": "197",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2421,7 +2421,7 @@
   {
     "Country": "RO",
     "HospitalNo": "198",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2433,7 +2433,7 @@
   {
     "Country": "RO",
     "HospitalNo": "199",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2445,7 +2445,7 @@
   {
     "Country": "RS",
     "HospitalNo": "200",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2457,7 +2457,7 @@
   {
     "Country": "SK",
     "HospitalNo": "201",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2469,7 +2469,7 @@
   {
     "Country": "SK",
     "HospitalNo": "202",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2481,7 +2481,7 @@
   {
     "Country": "SI",
     "HospitalNo": "203",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2493,7 +2493,7 @@
   {
     "Country": "ES",
     "HospitalNo": "204",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2505,7 +2505,7 @@
   {
     "Country": "ES",
     "HospitalNo": "205",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2517,7 +2517,7 @@
   {
     "Country": "ES",
     "HospitalNo": "206",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2529,7 +2529,7 @@
   {
     "Country": "ES",
     "HospitalNo": "207",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2541,7 +2541,7 @@
   {
     "Country": "ES",
     "HospitalNo": "208",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2553,7 +2553,7 @@
   {
     "Country": "ES",
     "HospitalNo": "209",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2565,7 +2565,7 @@
   {
     "Country": "ES",
     "HospitalNo": "210",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2577,7 +2577,7 @@
   {
     "Country": "ES",
     "HospitalNo": "211",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2589,7 +2589,7 @@
   {
     "Country": "ES",
     "HospitalNo": "212",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2601,7 +2601,7 @@
   {
     "Country": "ES",
     "HospitalNo": "213",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2613,7 +2613,7 @@
   {
     "Country": "ES",
     "HospitalNo": "214",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2625,7 +2625,7 @@
   {
     "Country": "ES",
     "HospitalNo": "215",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2637,7 +2637,7 @@
   {
     "Country": "ES",
     "HospitalNo": "216",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2649,7 +2649,7 @@
   {
     "Country": "ES",
     "HospitalNo": "217",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2661,7 +2661,7 @@
   {
     "Country": "ES",
     "HospitalNo": "218",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2673,7 +2673,7 @@
   {
     "Country": "ES",
     "HospitalNo": "219",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2685,7 +2685,7 @@
   {
     "Country": "ES",
     "HospitalNo": "220",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2697,7 +2697,7 @@
   {
     "Country": "ES",
     "HospitalNo": "221",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2709,7 +2709,7 @@
   {
     "Country": "ES",
     "HospitalNo": "222",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2721,7 +2721,7 @@
   {
     "Country": "ES",
     "HospitalNo": "223",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2733,7 +2733,7 @@
   {
     "Country": "SE",
     "HospitalNo": "224",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2745,7 +2745,7 @@
   {
     "Country": "SE",
     "HospitalNo": "225",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2757,7 +2757,7 @@
   {
     "Country": "SE",
     "HospitalNo": "226",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2769,7 +2769,7 @@
   {
     "Country": "SE",
     "HospitalNo": "227",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2781,7 +2781,7 @@
   {
     "Country": "SE",
     "HospitalNo": "228",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2793,7 +2793,7 @@
   {
     "Country": "SE",
     "HospitalNo": "229",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2805,7 +2805,7 @@
   {
     "Country": "SE",
     "HospitalNo": "230",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2817,7 +2817,7 @@
   {
     "Country": "SE",
     "HospitalNo": "231",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2829,7 +2829,7 @@
   {
     "Country": "SE",
     "HospitalNo": "232",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2841,7 +2841,7 @@
   {
     "Country": "CH",
     "HospitalNo": "233",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2853,7 +2853,7 @@
   {
     "Country": "CH",
     "HospitalNo": "234",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2865,7 +2865,7 @@
   {
     "Country": "TR",
     "HospitalNo": "235",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2877,7 +2877,7 @@
   {
     "Country": "TR",
     "HospitalNo": "236",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2889,7 +2889,7 @@
   {
     "Country": "TR",
     "HospitalNo": "237",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2901,7 +2901,7 @@
   {
     "Country": "TR",
     "HospitalNo": "238",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2913,7 +2913,7 @@
   {
     "Country": "TR",
     "HospitalNo": "239",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2925,7 +2925,7 @@
   {
     "Country": "TR",
     "HospitalNo": "240",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2937,7 +2937,7 @@
   {
     "Country": "TR",
     "HospitalNo": "241",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2949,7 +2949,7 @@
   {
     "Country": "TR",
     "HospitalNo": "242",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2961,7 +2961,7 @@
   {
     "Country": "TR",
     "HospitalNo": "243",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2973,7 +2973,7 @@
   {
     "Country": "GB",
     "HospitalNo": "245",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2985,7 +2985,7 @@
   {
     "Country": "GB",
     "HospitalNo": "246",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -2997,7 +2997,7 @@
   {
     "Country": "GB",
     "HospitalNo": "247",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -3009,7 +3009,7 @@
   {
     "Country": "GB",
     "HospitalNo": "248",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
@@ -3021,7 +3021,7 @@
   {
     "Country": "GB",
     "HospitalNo": "249",
-    "usesOnlineValveInventory": 0,
+    "UsesOnlineValveInventory": 0,
     "City": "",
     "TriggerOneMonth": false,
     "TriggerTwoMonth": false,
