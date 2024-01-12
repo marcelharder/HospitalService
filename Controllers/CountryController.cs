@@ -17,6 +17,7 @@ public class CountryController : BaseApiController
     public async Task<IActionResult> getAllCountries() { return Ok(await _hos.GetAllCountries()); }
     [HttpGet("allCities")]
     public async Task<IActionResult> getAllCities() { return Ok(await _hos.GetAllCities()); }
+    
     [HttpGet("allCitiesPerCountry/{IsoCode}")]
     public async Task<IActionResult> getAllCitiesPerCountry(string IsoCode) { return Ok(await _hos.GetAllCitiesPerCountry(IsoCode)); }
 
@@ -25,9 +26,13 @@ public class CountryController : BaseApiController
 
     [HttpGet("getCountryNameFromId/{id}")]
     public async Task<IActionResult> getCountryNameFromId(string id) { return Ok(await _hos.GetCountryNameFromId(id)); }
+   
     [HttpGet("getIsoFromId/{id}")]
     public async Task<IActionResult> getIsoFromId(string id) { return Ok(await _hos.GetIsoCodeFromId(id)); }
 
+    [HttpGet("getIsoFromDescription/{id}")]
+    public async Task<IActionResult> getIsoFromDescription(string id) { 
+        return Ok(await _hos.GetIsoCodeFromDescription(id)); }
 
 
 

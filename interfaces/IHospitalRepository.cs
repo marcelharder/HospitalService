@@ -24,7 +24,6 @@ public interface IHospitalRepository
     Task<List<Class_Item>?> GetAllCitiesPerCountry(string id);
     Task<int> UpdateCountry(ClassCountry p);
     Task<List<Class_Item>?> HospitalsPerCountryTelCode(string telCode);
-    Task<List<Class_Item>?> getHospitalsPerCountryCountryId(string countryId);
     Task<List<Class_Item>?> HospitalsPerCountryIso(string country);
     Task<List<Class_Item>?> AllHospitals();
     Task<PagedList<Class_Hospital>?> GetPagedHospitalList(HospitalParams hp);

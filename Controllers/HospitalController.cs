@@ -161,9 +161,6 @@ public class HospitalController : BaseApiController
     [HttpGet("getHospitalItemsPerCountryFromTelCode/{telcode}")]
     public async Task<IActionResult> getHIPDFT(string telcode) { return Ok(await _hos.HospitalsPerCountryTelCode(telcode)); }
   
-    [HttpGet("getHospitalItemsPerCountryCountryId/{countryId}")]
-    public async Task<IActionResult> getHICID(string countryId) { return Ok(await _hos.getHospitalsPerCountryCountryId(countryId)); }
-    
     [HttpGet("allHospitals")]
     public async Task<IActionResult> getAH() { return Ok(await _hos.AllHospitals()); }
     
