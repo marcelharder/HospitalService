@@ -183,6 +183,23 @@ public class HospitalRepo : IHospitalRepository
         }
         return result;
     }
+    public async Task<string?> GetIsoCodeFromDescription(string description)
+    {
+        var result = "";
+        var query = "SELECT * FROM Countries WHERE description = @description";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { description });
+            if (res != null)
+            {
+                result = res.IsoCode;
+            }
+        }
+        return result;
+    }
+
+
+
 
     #endregion
 
@@ -212,17 +229,46 @@ public class HospitalRepo : IHospitalRepository
             {
                 vendorCount = vendorarray.Count();
                 vendorarray.Add(vendor);
-                
+
                 var newCount = vendorarray.Count();
                 if (newCount > vendorCount)
                 {
-                    hospital.Vendors = string.Join(",",vendorarray);
+                    hospital.Vendors = string.Join(",", vendorarray);
                     UpdateHospital(hospital);
                     return "Vendor added";
                 }
                 else { return "Vendor was not added ..."; }
             }
             else { return "Vendor exists already..."; }
+        }
+    }
+    public async Task<string?> removeVendor(string vendor, string hospitalNo)
+    {
+        var vendorCount = 0;
+        var hospital = await GetClassHospital(hospitalNo);
+
+        if (hospital.Vendors == null)
+        {
+            return "Vendor does not exist";
+        }
+        else
+        {
+            var vendorarray = hospital.Vendors.Split(',').ToList();
+            if (vendorarray.Contains(vendor))
+            {
+                vendorCount = vendorarray.Count();
+                vendorarray.Remove(vendor);
+
+                var newCount = vendorarray.Count();
+                if (newCount < vendorCount)
+                {
+                    hospital.Vendors = string.Join(",", vendorarray);
+                    UpdateHospital(hospital);
+                    return "Vendor removed";
+                }
+                else { return "Vendor is not removed ..."; }
+            }
+            else { return "Vendor is not in the list ..."; }
         }
     }
     public async Task<Class_Hospital?> AddHospital(Class_Hospital cp)
@@ -369,6 +415,29 @@ public class HospitalRepo : IHospitalRepository
     {
         var list = new List<Class_Item>();
         var query = "SELECT * FROM Hospitals WHERE Country = @id";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryAsync<Class_Hospital>(query, new { id });
+            if (res != null)
+            {
+                foreach (Class_Hospital ch in res)
+                {
+
+                    var ci = new Class_Item();
+                    ci.value = Convert.ToInt32(ch.HospitalNo);
+                    ci.description = ch.HospitalName;
+                    list.Add(ci);
+
+                }
+                return list;
+            }
+        }
+        return null;
+    }
+    public async Task<List<Class_Item>?> getHospitalsPerCountryCountryId(string id) 
+    {
+        var list = new List<Class_Item>();
+        var query = "SELECT * FROM Hospitals WHERE Id = @id";
         using (var connection = _dc.CreateConnection())
         {
             var res = await connection.QueryAsync<Class_Hospital>(query, new { id });

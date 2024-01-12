@@ -14,7 +14,7 @@ services:
       - mariadb-data:/var/lib/mysql
   
   hospital:
-    image: hospital_app:v7
+    image: hospital_app:v10
     restart: always
     ports:
       - 8103:80

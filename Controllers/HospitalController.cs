@@ -46,6 +46,9 @@ public class HospitalController : BaseApiController
 
     [HttpGet("addVendorToHospital/{vendor}/{hospitalNo}")]
     public async Task<IActionResult> addVendorToHospital(string vendor, string hospitalNo){return Ok(await _hos.addVendors(vendor, hospitalNo));}
+  
+    [HttpGet("removeVendorFromHospital/{vendor}/{hospitalNo}")]
+    public async Task<IActionResult> removeVendorToHospital(string vendor, string hospitalNo){return Ok(await _hos.removeVendor(vendor, hospitalNo));}
 
     [HttpGet("allFullHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalsperCountry(string id)
@@ -62,7 +65,7 @@ public class HospitalController : BaseApiController
    
     [HttpGet("getHospitalsPerCountry/{id}")]
     public async Task<IActionResult> getHospitalInCountry(string id) { return Ok(await _hos.getHospitalsPerCountry(id)); }
-   
+    
     [HttpGet("getHospitalsWhereUserWorked/{csv}")]
     public async Task<IActionResult> getAllHospitalsThisSurgeonWorkedIn(string csv) { return Ok(await _hos.getHospitalsWhereUserWorked(csv)); }
     
@@ -157,6 +160,10 @@ public class HospitalController : BaseApiController
 
     [HttpGet("getHospitalItemsPerCountryFromTelCode/{telcode}")]
     public async Task<IActionResult> getHIPDFT(string telcode) { return Ok(await _hos.HospitalsPerCountryTelCode(telcode)); }
+  
+    [HttpGet("getHospitalItemsPerCountryCountryId/{countryId}")]
+    public async Task<IActionResult> getHICID(string countryId) { return Ok(await _hos.getHospitalsPerCountryCountryId(countryId)); }
+    
     [HttpGet("allHospitals")]
     public async Task<IActionResult> getAH() { return Ok(await _hos.AllHospitals()); }
     
