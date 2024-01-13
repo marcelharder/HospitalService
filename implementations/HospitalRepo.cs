@@ -448,29 +448,7 @@ public class HospitalRepo : IHospitalRepository
         }
         return null;
     }
-    public async Task<List<Class_Item>?> getHospitalsPerCountryCountryId(string id) 
-    {
-        var list = new List<Class_Item>();
-        var query = "SELECT * FROM Hospitals WHERE Id = @id";
-        using (var connection = _dc.CreateConnection())
-        {
-            var res = await connection.QueryAsync<Class_Hospital>(query, new { id });
-            if (res != null)
-            {
-                foreach (Class_Hospital ch in res)
-                {
-
-                    var ci = new Class_Item();
-                    ci.value = Convert.ToInt32(ch.HospitalNo);
-                    ci.description = ch.HospitalName;
-                    list.Add(ci);
-
-                }
-                return list;
-            }
-        }
-        return null;
-    }
+   
     public async Task<List<Class_Item>> getHospitalsWhereUserWorked(string hosp) // bv 4,48,5
     {
         var list = new List<Class_Item>();
