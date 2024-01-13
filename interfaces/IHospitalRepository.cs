@@ -32,6 +32,7 @@ public interface IHospitalRepository
     Task<string?> addVendors(string vendor, string hospital);
     Task<string?> removeVendor(string vendor, string hospital);
     Task<string?> GetCountryNameFromId(string id);
+    Task<string?> GetIsoCodeFromTelCode(string id);
     Task<string?> GetIsoCodeFromId(string id);
     Task<string?> GetIsoCodeFromDescription(string description);
     Task<List<Class_Hospital>?> GetSpPH(string selectedVendor, string currentCountry);

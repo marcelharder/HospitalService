@@ -27,6 +27,8 @@ public class CountryController : BaseApiController
     public async Task<IActionResult> getCountryNameFromId(string id) { return Ok(await _hos.GetCountryNameFromId(id)); }
     [HttpGet("getIsoFromId/{id}")]
     public async Task<IActionResult> getIsoFromId(string id) { return Ok(await _hos.GetIsoCodeFromId(id)); }
+    [HttpGet("getIsoFromTelCode/{id}")]
+    public async Task<IActionResult> getIsoFromTelCode(string id) { return Ok(await _hos.GetIsoCodeFromTelCode(id)); }
 
 
 

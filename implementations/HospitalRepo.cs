@@ -197,6 +197,20 @@ public class HospitalRepo : IHospitalRepository
         }
         return result;
     }
+    public async Task<string?> GetIsoCodeFromTelCode(string TelCode)
+    {
+        var result = "";
+        var query = "SELECT * FROM Countries WHERE TelCode = @TelCode";
+        using (var connection = _dc.CreateConnection())
+        {
+            var res = await connection.QueryFirstOrDefaultAsync<ClassCountry>(query, new { TelCode });
+            if (res != null)
+            {
+                result = res.IsoCode;
+            }
+        }
+        return result;
+    }
 
 
 
