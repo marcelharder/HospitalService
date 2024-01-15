@@ -27,4 +27,15 @@ namespace HospitalService.helpers;
             if(inputString.Length == 1){help = "0" + inputString;} else {help = inputString;}
             return help;
         }
+
+        public static void AddPagination(this HttpResponse response, int currentPage, int itemsPerPage, int totalItems, int totalPages)
+        {
+            var paginationHeader = new PaginationHeader(currentPage,itemsPerPage,totalItems,totalPages);
+
+            response.Headers.Add("Pagination", JsonSerializer.Serialize(paginationHeader, new JsonSerializerOptions(){
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            }));
+            response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
+
+        }
     }

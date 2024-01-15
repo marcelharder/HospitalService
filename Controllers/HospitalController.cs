@@ -165,7 +165,18 @@ public class HospitalController : BaseApiController
     public async Task<IActionResult> getAH() { return Ok(await _hos.AllHospitals()); }
     
     [HttpGet("pagedList")]
-    public async Task<IActionResult> getPL([FromQuery] HospitalParams hp) { return Ok(await _hos.GetPagedHospitalList(hp)); }
+    public async Task<IActionResult> getPL([FromQuery] HospitalParams hp) {
+
+        var hosp = await _hos.GetPagedHospitalList(hp);
+        
+        Response.AddPagination(
+            hosp.Currentpage,
+            hosp.PageSize,
+            hosp.TotalCount,
+            hosp.TotalPages);
+            
+         return Ok(hosp);
+    }
 
    [HttpGet("neg_sphlist_full/{currentVendor}/{currentCountry}")] // In which hospital is the vendor active
     public async Task<IActionResult> NSPH(string currentVendor, string currentCountry) { return Ok(await _hos.GetNegSpPH(currentVendor,currentCountry)); }

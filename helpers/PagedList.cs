@@ -1,5 +1,5 @@
-namespace HospitalService.helpers
-{
+namespace HospitalService.helpers;
+
 
     public class PagedList<T> : List<T>
     {
@@ -30,4 +30,3 @@ namespace HospitalService.helpers
             return new PagedList<T>(items, count,pageNumber, pageSize);
         }
     }
-}
