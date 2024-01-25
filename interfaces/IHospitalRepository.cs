@@ -28,6 +28,7 @@ public interface IHospitalRepository
     Task<List<Class_Item>?> AllHospitals();
     Task<PagedList<Class_Hospital>?> GetPagedHospitalList(HospitalParams hp);
     Task<int?> GetCountryIdFromDescription(string description);
+    Task<int?> UpdateContactToHospital(string HospitalNo,string contact, string contactImage);
     Task<string?> addVendors(string vendor, string hospital);
     Task<string?> removeVendor(string vendor, string hospital);
     Task<string?> GetCountryNameFromId(string id);

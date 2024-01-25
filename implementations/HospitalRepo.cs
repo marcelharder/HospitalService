@@ -223,76 +223,76 @@ public class HospitalRepo : IHospitalRepository
     {
         hospitalNo = hospitalNo.makeSureTwoChar();
         var hospital = await GetClassHospital(hospitalNo);
-        if(hospital != null){return hospital.Vendors;}
+        if (hospital != null) { return hospital.Vendors; }
         return null;
-        
+
     }
     public async Task<string?> addVendors(string vendor, string hospitalNo)
     {
-        var vendorCount = 0;
         var hospital = await GetClassHospital(hospitalNo);
-        if(hospital != null){
-
-        if (hospital.Vendors == null)
+        if (hospital != null)
         {
-            hospital.Vendors = vendor;
-            await UpdateHospital(hospital);
-            return "Vendor added";
-        }
-        else
-        {
-            var vendorarray = hospital.Vendors.Split(',').ToList();
-            if (!vendorarray.Contains(vendor))
+            if (hospital.Vendors == null)
             {
-                vendorCount = vendorarray.Count();
-                vendorarray.Add(vendor);
-
-                var newCount = vendorarray.Count();
-                if (newCount > vendorCount)
+                if (vendor != "")
                 {
-                    hospital.Vendors = string.Join(",", vendorarray);
+                    var incomingArray = vendor.Split(',').Distinct().ToList();
+                    hospital.Vendors = string.Join(",", incomingArray);
+                    await UpdateHospital(hospital);
+                    return "Vendor added";
+                }
+                else { return "vendor(s) can not be empty";}
+
+            }
+            else
+            {
+                if (vendor != "")
+                {
+                    var vendorarray = hospital.Vendors.Split(',').ToList();
+                    var incomingArray = vendor.Split(',').ToList();
+                    var combined = vendorarray.Concat(incomingArray).Distinct().ToList();
+                    hospital.Vendors = string.Join(",", combined);
                     await UpdateHospital(hospital);
                     return "Vendor added";
                 }
                 else { return "Vendor was not added ..."; }
             }
-            else { return "Vendor exists already..."; }
+
         }
-        
-    }
-    return null;
+        return null;
     }
     public async Task<string?> removeVendor(string vendor, string hospitalNo)
     {
         var vendorCount = 0;
         var hospital = await GetClassHospital(hospitalNo);
-if(hospital != null){
-        if (hospital.Vendors == null)
+        if (hospital != null)
         {
-            return "Vendor does not exist";
-        }
-        else
-        {
-            var vendorarray = hospital.Vendors.Split(',').ToList();
-            if (vendorarray.Contains(vendor))
+            if (hospital.Vendors == null)
             {
-                vendorCount = vendorarray.Count();
-                vendorarray.Remove(vendor);
-
-                var newCount = vendorarray.Count();
-                if (newCount < vendorCount)
-                {
-                    hospital.Vendors = string.Join(",", vendorarray);
-                    await UpdateHospital(hospital);
-                    return "Vendor removed";
-                }
-                else { return "Vendor is not removed ..."; }
+                return "Vendor does not exist";
             }
-            else { return "Vendor is not in the list ..."; }
-        }
+            else
+            {
+                var vendorarray = hospital.Vendors.Split(',').ToList();
+                if (vendorarray.Contains(vendor))
+                {
+                    vendorCount = vendorarray.Count();
+                    vendorarray.Remove(vendor);
 
-    }
-    return null;
+                    var newCount = vendorarray.Count();
+                    if (newCount < vendorCount)
+                    {
+                        hospital.Vendors = string.Join(",", vendorarray);
+                        await UpdateHospital(hospital);
+                        return "Vendor removed";
+                    }
+                    else { return "Vendor is not removed ..."; }
+                }
+                else { return "Vendor is not in the list ..."; }
+            }
+
+        }
+        return null;
     }
     public async Task<Class_Hospital?> AddHospital(Class_Hospital cp)
     {
@@ -457,7 +457,7 @@ if(hospital != null){
         }
         return null;
     }
-   
+
     public async Task<List<Class_Item>> getHospitalsWhereUserWorked(string hosp) // bv 4,48,5
     {
         var list = new List<Class_Item>();
@@ -690,7 +690,7 @@ if(hospital != null){
             var hospitals = await GetAllFullHospitalsPerCountry(hp.code);
             if (hospitals != null)
             {
-                
+
                 return PagedList<Class_Hospital>.Create(hospitals, hp.PageNumber, hp.PageSize);
             }
         }
@@ -772,6 +772,20 @@ if(hospital != null){
             }
         }
         return l;
+    }
+
+    public async Task<int?> UpdateContactToHospital(string hospitalNo, string contact, string contactImage)
+    {
+        // get currentHospital
+        var hospital = await GetClassHospital(hospitalNo);
+        if (hospital != null)
+        {
+            hospital.Contact = contact;
+            hospital.Contact_image = contactImage;
+            return await UpdateHospital(hospital);
+        }
+        else { return 0; }
+
     }
 
 
