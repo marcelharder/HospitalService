@@ -261,7 +261,23 @@ public class HospitalRepo : IHospitalRepository
         }
         return null;
     }
-    public async Task<string?> removeVendor(string vendor, string hospitalNo)
+     public async Task<string?> replaceVendor(string vendor, string hospitalNo)
+    {
+         var hospital = await GetClassHospital(hospitalNo);
+        if (hospital != null)
+        {
+            if (vendor != "")
+                {
+                    var incomingArray = vendor.Split(',').Distinct().ToList();
+                    hospital.Vendors = string.Join(",", incomingArray);
+                    await UpdateHospital(hospital);
+                    return "Vendors replaced";
+                }
+                else { return "vendor(s) can not be empty";}
+        }
+        return null;
+    }
+      public async Task<string?> removeVendor(string vendor, string hospitalNo)
     {
         var vendorCount = 0;
         var hospital = await GetClassHospital(hospitalNo);
@@ -787,6 +803,8 @@ public class HospitalRepo : IHospitalRepository
         else { return 0; }
 
     }
+
+   
 
 
     #endregion

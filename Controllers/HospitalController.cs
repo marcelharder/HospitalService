@@ -43,6 +43,9 @@ public class HospitalController : BaseApiController
 
     [HttpGet("getHospitalVendors/{id}")]
     public async Task<IActionResult> getHpspitalVendors(string id) { return Ok(await _hos.getHospitalVendors(id)); }
+    
+    [HttpGet("replaceVendorInHospital/{vendor}/{hospitalNo}")]
+    public async Task<IActionResult> replaceVendorToHospital(string vendor, string hospitalNo) { return Ok(await _hos.replaceVendor(vendor, hospitalNo)); }
 
     [HttpGet("addVendorToHospital/{vendor}/{hospitalNo}")]
     public async Task<IActionResult> addVendorToHospital(string vendor, string hospitalNo) { return Ok(await _hos.addVendors(vendor, hospitalNo)); }

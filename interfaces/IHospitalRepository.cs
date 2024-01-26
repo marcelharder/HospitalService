@@ -31,6 +31,7 @@ public interface IHospitalRepository
     Task<int?> UpdateContactToHospital(string HospitalNo,string contact, string contactImage);
     Task<string?> addVendors(string vendor, string hospital);
     Task<string?> removeVendor(string vendor, string hospital);
+    Task<string?> replaceVendor(string vendor, string hospital);
     Task<string?> GetCountryNameFromId(string id);
     Task<string?> GetIsoCodeFromTelCode(string id);
     Task<string?> GetIsoCodeFromId(string id);
