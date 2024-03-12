@@ -164,6 +164,7 @@ public class HospitalController : BaseApiController
     {
 
         var hosp = await _hos.GetPagedHospitalList(hp);
+        if(hosp == null){return BadRequest("Something went wrong");}
 
         Response.AddPagination(
             hosp.Currentpage,
