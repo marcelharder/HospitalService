@@ -6,6 +6,8 @@ namespace HospitalService.Data.dtos;
         public string? HospitalName { get; set; }
         public string? SelectedHospitalName { get; set; }
         public string? Description { get; set; }
+        public string? Email{ get; set; }
+        public string? PostalCode{ get; set; }
         public string? HospitalNo { get; set; }
         public string? Address { get; set; }
         public string? Telephone { get; set; }

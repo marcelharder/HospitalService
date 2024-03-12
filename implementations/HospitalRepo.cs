@@ -296,6 +296,8 @@ if(hospital != null){
     }
     public async Task<Class_Hospital?> AddHospital(Class_Hospital cp)
     {
+       cp.HospitalNo = await findNextHospitalNo();
+
         var query = "INSERT INTO Hospitals (SelectedHospitalName,HospitalName,HospitalNo,Description,Address,Telephone," +
       "Fax,City,Country,SampleMrn,RegExpr,UsesOnlineValveInventory,ImageUrl,OpReportDetails1,OpReportDetails2,OpReportDetails3," +
       "Vendors,Rp,SMSMobileNumber,SMSSendTime,TriggerOneMonth,TriggerTwoMonth,TriggerThreeMonth,DBBackend, " +
@@ -394,6 +396,22 @@ if(hospital != null){
             }
         }
     }
+
+    private async Task<string> findNextHospitalNo()
+    {
+        var help = 0;
+        var allHospitalNumbers = new List<int>();
+        // get all hospitals
+        var ah = await GetAllHospitals();
+        if (ah != null)
+        {
+            foreach (HospitalForReturnDTO vc in ah) { allHospitalNumbers.Add(Convert.ToInt32(vc.HospitalNo)); }
+            help = allHospitalNumbers.Count();
+            while (allHospitalNumbers.Contains(help)) { help++; }
+        }
+        return help.ToString();
+    }
+
     public async Task<bool> CheckHospitalExists(string hospitalNo)
     {
         var help = false;
@@ -688,10 +706,9 @@ if(hospital != null){
         if (hp.code != null)
         {
             var hospitals = await GetAllFullHospitalsPerCountry(hp.code);
-            if (hospitals != null)
-            {
-                
-                return PagedList<Class_Hospital>.Create(hospitals, hp.PageNumber, hp.PageSize);
+            if(hospitals != null){
+                           
+                return PagedList<Class_Hospital>.Create(hospitals,hp.PageNumber, hp.PageSize);
             }
         }
         return null;
