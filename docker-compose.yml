@@ -13,17 +13,17 @@ services:
     volumes:
       - mariadb-data:/var/lib/mysql
   
-  hospital:
-    image: hospital_app:v15
-    restart: always
-    ports:
-      - 8103:80
-    networks: 
-      - internal-container-network
-    volumes:
-      - mariadb-data:/var/lib/mysql
-    depends_on:
-      - db
+  #hospital:
+  #  image: hospital_app:v17
+  #  restart: always
+  #  ports:
+  #    - 8103:80
+  #  networks: 
+  #    - internal-container-network
+  #  volumes:
+  #    - mariadb-data:/var/lib/mysql
+  #  depends_on:
+  #    - db
   
   
  
