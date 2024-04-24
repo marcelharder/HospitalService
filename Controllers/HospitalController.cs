@@ -99,21 +99,13 @@ public class HospitalController : BaseApiController
         return BadRequest("");
     }
  
-    [HttpPost("{country}/{no}")]
-    public async Task<IActionResult> PostHospitalAsync(string country, int no)
+    [HttpPost("{country}")]
+    public async Task<IActionResult> PostHospitalAsync(string country)
     {
-        if (await _hos.CheckHospitalExists(no.ToString().makeSureTwoChar()))
-        {
-            return BadRequest("Hospital already exists");
-        }
-        else
-        {
             Class_Hospital ch = new Class_Hospital();
             ch.Country = country;
-            ch.HospitalNo = no.ToString().makeSureTwoChar();
-            await _hos.AddHospital(ch);
-            return Ok(await _hos.GetSpecificHospital(ch.HospitalNo));
-        }
+            var newHospital = await _hos.AddHospital(ch);
+            return Ok(newHospital);
     }
   
     [HttpDelete("{id}")]
@@ -151,7 +143,6 @@ public class HospitalController : BaseApiController
         return BadRequest("Could not add the photo ...");
     }
    
-   
     [HttpGet("IsThisHospitalImplementingOVI/{id}")]
     public async Task<IActionResult> getOVI(string id) { return Ok(await _hos.HospitalImplementsOVI(id)); }
 
@@ -166,16 +157,11 @@ public class HospitalController : BaseApiController
     
     [HttpGet("pagedList")]
     public async Task<IActionResult> getPL([FromQuery] HospitalParams hp) {
-
-        var hosp = await _hos.GetPagedHospitalList(hp);
         
-        Response.AddPagination(
-            hosp.Currentpage,
-            hosp.PageSize,
-            hosp.TotalCount,
-            hosp.TotalPages);
-            
-         return Ok(hosp);
+        var hosp = await _hos.GetPagedHospitalList(hp);
+
+        Response.AddPagination( hosp.Currentpage, hosp.PageSize, hosp.TotalCount,hosp.TotalPages);
+        return Ok(hosp);
     }
 
    [HttpGet("neg_sphlist_full/{currentVendor}/{currentCountry}")] // In which hospital is the vendor active
